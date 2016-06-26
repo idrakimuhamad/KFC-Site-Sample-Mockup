@@ -1,0 +1,479 @@
+html {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  transition: color .3s ease; }
+  a:hover {
+    color: #c41230; }
+
+.icon {
+  color: #333;
+  transition: color .3s ease; }
+  .icon:hover {
+    color: #c41230; }
+
+.btn {
+  background: #c41230;
+  color: #fff;
+  transition: all .3s ease; }
+  .btn:hover {
+    background: #ef4d69; }
+  .btn:active {
+    background: #950e25; }
+
+/**
+  Mobile first FTW
+*/
+#loading {
+  left: 65px;
+  z-index: 5;
+  background: #fff; }
+  #loading .loader {
+    width: 32px;
+    height: 32px;
+    clear: both;
+    margin: 20px auto;
+    background-color: #c41230;
+    border-radius: 50%;
+    position: relative;
+    -webkit-animation: loader .6s infinite linear;
+    animation: loader .6s infinite linear; }
+    #loading .loader:after {
+      content: '';
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      width: 10px;
+      height: 10px;
+      left: 5px;
+      top: 5px;
+      background-color: white; }
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+.kfc__header {
+  z-index: 7;
+  background: #fff; }
+  .kfc__header.header-main {
+    height: 100vh;
+    border-right-color: #e6e6e6; }
+
+.kfc__navigation .kfc__navigation-menu,
+.kfc__cart-count .kfc__cart-link {
+  font-size: 2em; }
+
+.kfc__logo img {
+  width: 2em; }
+
+.menu-animate, .menu-toggle, .menu-toggle:before, .menu-toggle:after, .menu-toggle .icon, .menu-toggle .icon .square {
+  transition: all 0.5s cubic-bezier(0.31, -0.105, 0.43, 1.59); }
+
+.menu-toggle {
+  width: 1em;
+  height: 1em;
+  margin: auto;
+  cursor: pointer; }
+  .menu-toggle:before, .menu-toggle:after {
+    height: 1em;
+    line-height: 1em;
+    margin-right: 30px;
+    padding-right: 100%;
+    font-weight: 600;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .menu-toggle:before {
+    content: 'MENU';
+    color: #333;
+    transform: rotate(0deg); }
+  .menu-toggle:after {
+    content: 'CLOSE';
+    color: #c41230;
+    opacity: 0;
+    transform: rotate(-45deg); }
+  .menu-toggle .icon {
+    width: 1em;
+    height: 1em;
+    position: relative; }
+    .menu-toggle .icon .square {
+      background-color: #333;
+      width: 24%;
+      height: 24%;
+      position: absolute; }
+      .menu-toggle .icon .square:nth-child(1) {
+        top: 0;
+        left: 0; }
+      .menu-toggle .icon .square:nth-child(2) {
+        top: 0;
+        left: 38%; }
+      .menu-toggle .icon .square:nth-child(3) {
+        top: 0;
+        left: 76%; }
+      .menu-toggle .icon .square:nth-child(4) {
+        top: 38%;
+        left: 0; }
+      .menu-toggle .icon .square:nth-child(5) {
+        top: 38%;
+        left: 38%; }
+      .menu-toggle .icon .square:nth-child(6) {
+        top: 38%;
+        left: 76%; }
+      .menu-toggle .icon .square:nth-child(7) {
+        top: 76%;
+        left: 0; }
+      .menu-toggle .icon .square:nth-child(8) {
+        top: 76%;
+        left: 38%; }
+      .menu-toggle .icon .square:nth-child(9) {
+        top: 76%;
+        left: 76%; }
+  .menu-toggle:hover .square {
+    background-color: #c41230; }
+  .menu-toggle.expand:before {
+    opacity: 0;
+    transform: rotate(45deg); }
+  .menu-toggle.expand:after {
+    opacity: 1;
+    transform: rotate(0deg); }
+  .menu-toggle.expand .icon {
+    transform: rotate(45deg); }
+    .menu-toggle.expand .icon .square {
+      background-color: #c41230; }
+      .menu-toggle.expand .icon .square:nth-child(1), .menu-toggle.expand .icon .square:nth-child(3), .menu-toggle.expand .icon .square:nth-child(7), .menu-toggle.expand .icon .square:nth-child(9) {
+        opacity: 0; }
+  .menu-toggle:active {
+    opacity: .8; }
+
+.kfc__main-content {
+  margin-top: 53px; }
+
+.kfc__feature-container {
+  background: #000;
+  height: 60vh; }
+  .kfc__feature-container .kfc__featured-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 60vh; }
+
+.slick-dots {
+  bottom: 1em; }
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: #fff;
+    opacity: .8; }
+  .slick-dots li.slick-active button:before {
+    color: #c41230; }
+
+.kfc__featured-nav-container {
+  height: 32.5vh; }
+
+.kfc__featured-nav {
+  height: 100%;
+  background-color: #e6e6e6;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  border-color: #b3b3b3; }
+  .kfc__featured-nav h2 {
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 6px;
+    word-break: break-word;
+    line-height: 1.5;
+    width: 65%; }
+
+.menu-nav-link {
+  background-image: url("../img/menu_link.png"); }
+
+.locate-nav-link {
+  background-image: url("../img/marker_link.png"); }
+
+.kfc__navigation-wrap {
+  z-index: 6;
+  display: none;
+  left: 0; }
+  .kfc__navigation-wrap.reveal {
+    display: block; }
+  .kfc__navigation-wrap .kfc__navigation-content {
+    background: #fff; }
+  .kfc__navigation-wrap .kfc__footer-content {
+    cursor: pointer;
+    transition: background .3s ease; }
+    .kfc__navigation-wrap .kfc__footer-content a {
+      line-height: 9; }
+    .kfc__navigation-wrap .kfc__footer-content:hover {
+      background-color: #c41230; }
+      .kfc__navigation-wrap .kfc__footer-content:hover a {
+        color: #fff; }
+  .kfc__navigation-wrap a {
+    display: block; }
+    .kfc__navigation-wrap a:hover {
+      color: #fff; }
+
+.kfc__navigation-main-links {
+  height: 30vh; }
+
+.kfc__navigation-secondary-links {
+  height: 20vh;
+  border-color: #e6e6e6; }
+
+.kfc__navigation-footer-container {
+  height: 50vh; }
+
+.kfc__navigation-main-content,
+.kfc__navigation-secondary-content,
+.kfc__navigation-footer-container {
+  border-color: #e6e6e6; }
+
+.kfc__footer {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  font-size: .8em; }
+  .kfc__footer a {
+    transition: all .3s ease;
+    border-bottom: 1px solid transparent;
+    display: inline-block; }
+    .kfc__footer a:hover {
+      color: #c41230;
+      border-bottom: 1px solid #c41230; }
+
+.kfc__footer-social .icon {
+  font-size: 2em; }
+
+#chickenCategory {
+  background-image: url("../img/menu_chicken.png"); }
+
+#combosCategory {
+  background-image: url("../img/menu_combos.png"); }
+
+#burgerCategory {
+  background-image: url("../img/menu_burger.png");
+  background-position: 6em center; }
+  #burgerCategory:hover {
+    background-position: 2em center; }
+
+#sideCategory {
+  background-image: url("../img/menu_side.png"); }
+
+#treatsCategory {
+  background-image: url("../img/menu_treats.png");
+  background-position: 5em center; }
+  #treatsCategory:hover {
+    background-position: 1em center; }
+
+#breakfastCategory {
+  background-image: url("../img/menu_breakfast.png");
+  background-position: 6em center; }
+  #breakfastCategory:hover {
+    background-position: 2em center; }
+
+#dessertsCategory {
+  background-image: url("../img/menu_desserts.png");
+  background-position: 3em center; }
+  #dessertsCategory:hover {
+    background-position: -1em center; }
+
+#chicken15 {
+  background-image: url("../img/menu_chicken.png"); }
+
+#chicken9 {
+  background-image: url("../img/menu_chicken9.png");
+  background-position: 5em center; }
+
+#chicken2 {
+  background-image: url("../img/menu_chicken2.png");
+  background-position: 5em center; }
+
+#chicken3 {
+  background-image: url("../img/menu_chicken3.png");
+  background-position: 5em center; }
+
+#chicken5 {
+  background-image: url("../img/menu_chicken5.png");
+  background-position: 5em center; }
+
+#chicken9:hover,
+#chicken2:hover,
+#chicken3:hover,
+#chicken5:hover {
+  background-position: 3em center; }
+
+.kfc__menu-categories,
+.kfc__menu-subcategories {
+  background-size: cover;
+  background-position: 5em center;
+  background-repeat: no-repeat;
+  border: 1px solid #e6e6e6;
+  border-left-width: 0;
+  border-top-width: 0;
+  transition: background .3s ease; }
+  .kfc__menu-categories .submenu-close,
+  .kfc__menu-subcategories .submenu-close {
+    line-height: 1;
+    padding: 3rem 0; }
+    .kfc__menu-categories .submenu-close .icon,
+    .kfc__menu-subcategories .submenu-close .icon {
+      color: #c41230;
+      font-size: 2em; }
+    .kfc__menu-categories .submenu-close span,
+    .kfc__menu-subcategories .submenu-close span {
+      display: block; }
+  .kfc__menu-categories:first-child, .kfc__menu-categories:nth-child(4n+5),
+  .kfc__menu-subcategories:first-child,
+  .kfc__menu-subcategories:nth-child(4n+5) {
+    border-left-width: 1px; }
+  .kfc__menu-categories:nth-child(-n+4),
+  .kfc__menu-subcategories:nth-child(-n+4) {
+    border-top-width: 1px; }
+  .kfc__menu-categories:nth-child(4n+1),
+  .kfc__menu-subcategories:nth-child(4n+1) {
+    animation-delay: .2s; }
+  .kfc__menu-categories:nth-child(4n+2),
+  .kfc__menu-subcategories:nth-child(4n+2) {
+    animation-delay: .4s; }
+  .kfc__menu-categories:nth-child(4n+3),
+  .kfc__menu-subcategories:nth-child(4n+3) {
+    animation-delay: .6s; }
+  .kfc__menu-categories:nth-child(4n+4),
+  .kfc__menu-subcategories:nth-child(4n+4) {
+    animation-delay: .8s; }
+  .kfc__menu-categories:hover,
+  .kfc__menu-subcategories:hover {
+    background-position: 2em center;
+    background-color: #c41230;
+    border-color: #c41230; }
+    .kfc__menu-categories:hover h3 a,
+    .kfc__menu-subcategories:hover h3 a {
+      color: #fff; }
+    .kfc__menu-categories:hover .submenu-close .icon,
+    .kfc__menu-subcategories:hover .submenu-close .icon {
+      color: #fff; }
+  .kfc__menu-categories h3,
+  .kfc__menu-subcategories h3 {
+    line-height: 2; }
+    .kfc__menu-categories h3 a,
+    .kfc__menu-subcategories h3 a {
+      display: block; }
+
+.kfc__menu-description-content h2 {
+  background: #c41230;
+  color: #fff; }
+
+.kfc__single-menu-cover img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block; }
+
+.kfc__single-menu-close {
+  top: 1em;
+  right: 1em;
+  z-index: 3;
+  background: #fff;
+  font-size: 2em;
+  padding: .3em .5em; }
+  .kfc__single-menu-close .icon {
+    color: #c41230; }
+
+.order-container {
+  border-bottom: 2px dashed #c41230; }
+
+.kfc_menu-price {
+  display: block; }
+
+.kfc__menu-words {
+  line-height: 1.5; }
+
+.kfc__gst-note {
+  border-top: 2px dashed #c41230; }
+
+.kfc__store-container {
+  height: 100vh; }
+  .kfc__store-container > div {
+    height: 100%; }
+  .kfc__store-container .kfc_store-map {
+    background: #D9D9D9; }
+  .kfc__store-container .kfc__store-area,
+  .kfc__store-container .kfc__store-option,
+  .kfc__store-container .results-count {
+    border-bottom: 1px solid #e6e6e6; }
+  .kfc__store-container .kfc__store-area input {
+    background: white;
+    border: 0;
+    height: auto;
+    padding: 1em;
+    width: 100%;
+    font-size: 1em;
+    outline: 0; }
+  .kfc__store-container .kfc__store-results {
+    height: calc(100% - 102px); }
+  .kfc__store-container .results-address-container {
+    height: calc(100% - 49px);
+    overflow-y: auto; }
+  .kfc__store-container .results-address-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: #f2f2f2; }
+    .kfc__store-container .results-address-list .result-address {
+      border-bottom: 1px solid #b3b3b3; }
+
+@media (min-width: 52em) {
+  .kfc__main-content {
+    margin-top: 0;
+    margin-left: 65px;
+    height: 100vh; }
+  .kfc__feature-container {
+    height: 60%; }
+    .kfc__feature-container .kfc__featured-image {
+      background-size: cover;
+      height: 427px; }
+  .kfc__featured-nav-container {
+    height: 40%; }
+  .kfc__featured-nav h2 {
+    width: 50%; }
+  .kfc__navigation-wrap {
+    left: 65px; }
+  .kfc__menu-categories,
+  .kfc__menu-subcategories {
+    background-position: left center; }
+    .kfc__menu-categories h3,
+    .kfc__menu-subcategories h3 {
+      line-height: 9; }
+    .kfc__menu-categories:hover,
+    .kfc__menu-subcategories:hover {
+      background-position: -3em center; }
+  #burgerCategory {
+    background-position: 3em center; }
+    #burgerCategory:hover {
+      background-position: -1em center; }
+  #treatsCategory {
+    background-position: 5em center; }
+    #treatsCategory:hover {
+      background-position: 1em center; }
+  #breakfastCategory {
+    background-position: 6em center; }
+    #breakfastCategory:hover {
+      background-position: 2em center; }
+  #dessertsCategory {
+    background-position: 3em center; }
+    #dessertsCategory:hover {
+      background-position: -1em center; } }

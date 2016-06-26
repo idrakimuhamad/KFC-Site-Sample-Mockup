@@ -1,0 +1,23 @@
+{
+  "name": "kfc_web",
+  "version": "0.0.1",
+  "description": "KFC website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "idraki muhamad",
+  "license": "ISC",
+  "devDependencies": {
+    "basscss-btn": "^1.1.1",
+    "basscss-btn-outline": "^1.1.0",
+    "basscss-btn-primary": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "basscss": "^8.0.1"
+  }
+}

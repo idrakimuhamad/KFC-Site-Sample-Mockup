@@ -1,0 +1,640 @@
+// Variables
+// Colors
+$blackPrimary: #333;
+$redPrimary: #c41230;
+$white: #fff;
+$black: #000;
+
+// Fonts
+$fontStack: 'Raleway', sans-serif;
+
+// Others
+$size: 1em;
+
+// layout
+html {
+  box-sizing: border-box;
+  font-family: $fontStack;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $blackPrimary;
+  transition: color .3s ease;
+  &:hover {
+    color: $redPrimary;
+  }
+}
+.icon {
+  color: $blackPrimary;
+  transition: color .3s ease;
+  &:hover {
+    color: $redPrimary;
+  }
+}
+.btn {
+  background: $redPrimary;
+  color: $white;
+  transition: all .3s ease;
+  &:hover {
+    background: lighten($redPrimary, 20%);
+  }
+  &:active {
+    background: darken($redPrimary, 10%);
+  }
+}
+
+/**
+  Mobile first FTW
+*/
+// Loading
+// Credit https://codepen.io/bernethe/pen/dorozd
+#loading {
+  left: 65px;
+  z-index: 5;
+  background: $white;
+  .loader {
+  	width: 32px;
+  	height: 32px;
+  	clear: both;
+  	margin: 20px auto;
+    background-color: $redPrimary;
+  	border-radius: 50%;
+  	position: relative;
+  	-webkit-animation: loader .6s infinite linear;
+  	animation: loader .6s infinite linear;
+    &:after {
+    	content: '';
+    	border-radius: 50%;
+    	position: absolute;
+    	display: block;
+    	width: 10px;
+    	height: 10px;
+    	left: 5px;
+    	top: 5px;
+    	background-color: lighten($redPrimary, 100%);
+    }
+  }
+}
+@keyframes loader {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}
+
+// Header
+.kfc__header {
+  z-index: 7;
+  background: $white;
+  &.header-main {
+    height: 100vh;
+    border-right-color: lighten($blackPrimary, 70%);
+  }
+  &.header-mobile {
+
+  }
+}
+.kfc__navigation .kfc__navigation-menu,
+.kfc__cart-count .kfc__cart-link {
+  font-size: 2em;
+}
+.kfc__logo {
+  img {
+    width: 2em;
+  }
+}
+// Menu icon
+// Credit: https://codepen.io/chrisdothtml/pen/LEaEzM
+.menu-animate {
+	transition: all 0.5s cubic-bezier(0.310, -0.105, 0.430, 1.590);
+}
+.menu-toggle {
+	width: $size;
+	height: $size;
+	margin: auto;
+	cursor: pointer;
+	@extend .menu-animate;
+
+	&:before,
+	&:after {
+		height: $size;
+		line-height: $size;
+		margin-right: 30px;
+		padding-right: 100%;
+		font-weight: 600;
+		font-size: 25px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		@extend .menu-animate;
+	}
+
+	&:before {
+		content: 'MENU';
+		color: $blackPrimary;
+		transform: rotate(0deg);
+	}
+
+	&:after {
+		content: 'CLOSE';
+		color: $redPrimary;
+		opacity: 0;
+		transform: rotate(-45deg);
+	}
+
+	.icon {
+		width: $size;
+		height: $size;
+    position: relative;
+		@extend .menu-animate;
+
+		.square {
+			background-color: $blackPrimary;
+			width: 24%;
+			height: 24%;
+			position: absolute;
+			@extend .menu-animate;
+
+			&:nth-child(1) {
+				top: 0;
+				left: 0;
+			}
+
+			&:nth-child(2) {
+				top: 0;
+				left: 38%;
+			}
+
+			&:nth-child(3) {
+				top: 0;
+				left: 76%;
+			}
+
+			&:nth-child(4) {
+				top: 38%;
+				left: 0;
+			}
+
+			&:nth-child(5) {
+				top: 38%;
+				left: 38%;
+			}
+
+			&:nth-child(6) {
+				top: 38%;
+				left: 76%;
+			}
+
+			&:nth-child(7) {
+				top: 76%;
+				left: 0;
+			}
+
+			&:nth-child(8) {
+				top: 76%;
+				left: 38%;
+			}
+
+			&:nth-child(9) {
+				top: 76%;
+				left: 76%;
+			}
+		}
+	}
+
+  &:hover {
+    .square {
+      background-color: $redPrimary;
+    }
+  }
+
+	&.expand {
+		&:before {
+			opacity: 0;
+			transform: rotate(45deg);
+		}
+
+		&:after {
+			opacity: 1;
+			transform: rotate(0deg);
+		}
+
+		.icon {
+			transform: rotate(45deg);
+
+			.square {
+				background-color: $redPrimary;
+
+				&:nth-child(1),
+				&:nth-child(3),
+				&:nth-child(7),
+				&:nth-child(9) {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	&:active {
+		opacity: .8;
+	}
+}
+// Main content
+.kfc__main-content {
+  margin-top: 53px;
+}
+// Featured
+.kfc__feature-container {
+  background: $black;
+  height: 60vh;
+  .kfc__featured-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 60vh;
+  }
+}
+.slick-dots {
+  bottom: 1em;
+  li {
+    button:before {
+      font-size: 12px;
+      color: $white;
+      opacity: .8;
+    }
+    &.slick-active {
+      button:before {
+        color: $redPrimary;
+      }
+    }
+  }
+}
+// featured navigation
+.kfc__featured-nav-container {
+  height: 32.5vh;
+}
+.kfc__featured-nav {
+  height: 100%;
+  background-color: lighten($blackPrimary, 70%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  border-color: lighten($blackPrimary, 50%);
+  h2 {
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 6px;
+    word-break: break-word;
+    line-height: 1.5;
+    width: 65%;
+  }
+}
+.menu-nav-link {
+  background-image: url('../img/menu_link.png');
+}
+.locate-nav-link {
+  background-image: url('../img/marker_link.png');
+}
+// Navigation wrapper
+.kfc__navigation-wrap {
+  z-index: 6;
+  display: none;
+  left: 0;
+  &.reveal {
+    display: block;
+  }
+  .kfc__navigation-content {
+    background: $white;
+  }
+  .kfc__footer-content {
+    cursor: pointer;
+    transition: background .3s ease;
+    a {
+      line-height: 9;
+    }
+    &:hover {
+      background-color: $redPrimary;
+      a {
+        color: $white;
+      }
+    }
+  }
+  a {
+    display: block;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+.kfc__navigation-main-links {
+  height: 30vh;
+}
+.kfc__navigation-secondary-links {
+  height: 20vh;
+  border-color: lighten($blackPrimary, 70%);
+}
+.kfc__navigation-footer-container {
+  height: 50vh;
+}
+.kfc__navigation-main-content,
+.kfc__navigation-secondary-content,
+.kfc__navigation-footer-container {
+  border-color: lighten($blackPrimary, 70%);
+}
+.kfc__footer {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  font-size: .8em;
+  a {
+    transition: all .3s ease;
+    border-bottom: 1px solid transparent;
+    display: inline-block;
+    &:hover {
+      color: $redPrimary;
+      border-bottom: 1px solid $redPrimary;
+    }
+  }
+}
+.kfc__footer-social {
+  .icon {
+    font-size: 2em;
+  }
+}
+
+// Menu Page
+#chickenCategory {
+  background-image: url('../img/menu_chicken.png');
+}
+#combosCategory {
+  background-image: url('../img/menu_combos.png');
+}
+#burgerCategory {
+  background-image: url('../img/menu_burger.png');
+  background-position: 6em center;
+  &:hover {
+    background-position: 2em center;
+  }
+}
+#sideCategory {
+  background-image: url('../img/menu_side.png');
+}
+#treatsCategory {
+  background-image: url('../img/menu_treats.png');
+  background-position: 5em center;
+  &:hover {
+    background-position: 1em center;
+  }
+}
+#breakfastCategory {
+  background-image: url('../img/menu_breakfast.png');
+  background-position: 6em center;
+  &:hover {
+    background-position: 2em center;
+  }
+}
+#dessertsCategory {
+  background-image: url('../img/menu_desserts.png');
+  background-position: 3em center;
+  &:hover {
+    background-position: -1em center;
+  }
+}
+
+// Chicken category
+#chicken15 {
+  background-image: url('../img/menu_chicken.png');
+}
+#chicken9 {
+  background-image: url('../img/menu_chicken9.png');
+  background-position: 5em center;
+}
+#chicken2 {
+  background-image: url('../img/menu_chicken2.png');
+  background-position: 5em center;
+}
+#chicken3 {
+  background-image: url('../img/menu_chicken3.png');
+  background-position: 5em center;
+}
+#chicken5 {
+  background-image: url('../img/menu_chicken5.png');
+  background-position: 5em center;
+}
+#chicken9:hover,
+#chicken2:hover,
+#chicken3:hover,
+#chicken5:hover {
+  background-position: 3em center;
+}
+.kfc__menu-categories,
+.kfc__menu-subcategories {
+  background-size: cover;
+  background-position: 5em center;
+  background-repeat: no-repeat;
+  border: 1px solid lighten($blackPrimary, 70%);
+  border-left-width: 0;
+  border-top-width: 0;
+  transition: background .3s ease;
+
+  .submenu-close {
+    line-height: 1;
+    padding: 3rem 0;
+    .icon {
+      color: $redPrimary;
+      font-size: 2em;
+    }
+    span {
+      display: block;
+    }
+  }
+
+  &:first-child,
+  &:nth-child(4n+5) {
+    border-left-width: 1px;
+  }
+  &:nth-child(-n+4) {
+    border-top-width: 1px;
+  }
+  &:nth-child(4n+1) {
+    animation-delay: .2s;
+  }
+  &:nth-child(4n+2) {
+    animation-delay: .4s;
+  }
+  &:nth-child(4n+3) {
+    animation-delay: .6s;
+  }
+  &:nth-child(4n+4) {
+    animation-delay: .8s;  
+  }
+  &:hover {
+    background-position: 2em center;
+    background-color: $redPrimary;
+    border-color: $redPrimary;
+    h3 a {
+      color: $white;
+    }
+    .submenu-close {
+      .icon {
+        color: $white;
+      }
+    }
+  }
+  h3 {
+    line-height: 2;
+    a {
+      display: block;
+    }
+  }
+}
+// Single menu page
+.kfc__menu-description-content {
+  h2 {
+    background: $redPrimary;
+    color: $white;
+  }
+}
+.kfc__single-menu-cover {
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+.kfc__single-menu-close {
+  top: 1em;
+  right: 1em;
+  z-index: 3;
+  background: $white;
+  font-size: 2em;
+  padding: .3em .5em;
+  .icon {
+    color: $redPrimary;
+  }
+}
+.order-container {
+  border-bottom: 2px dashed $redPrimary;
+}
+.kfc_menu-price {
+  display: block;
+}
+.kfc__menu-words {
+  line-height: 1.5;
+}
+.kfc__gst-note {
+  border-top: 2px dashed $redPrimary;
+}
+// Store page
+.kfc__store-container {
+  height: 100vh;
+  > div {
+    height: 100%;
+  }
+  .kfc_store-map {
+    background: #D9D9D9;
+  }
+  .kfc__store-area,
+  .kfc__store-option,
+  .results-count {
+    border-bottom: 1px solid lighten($blackPrimary, 70%);
+  }
+  .kfc__store-area {
+    input {
+      background: white;
+      border: 0;
+      height: auto;
+      padding: 1em;
+      width: 100%;
+      font-size: 1em;
+      outline: 0;
+    }
+  }
+  .kfc__store-results {
+    height: calc(100% - 102px);
+  }
+  .results-address-container {
+    height: calc(100% - 49px);
+    overflow-y: auto;
+  }
+  .results-address-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: lighten($blackPrimary, 75%);
+    .result-address {
+      border-bottom: 1px solid lighten($blackPrimary, 50%);
+    }
+  }
+}
+
+@media (min-width: 52em) {
+  // main content
+  .kfc__main-content {
+    margin-top: 0;
+    margin-left: 65px;
+    height: 100vh;
+  }
+  // Featured
+  .kfc__feature-container {
+    height: 60%;
+    .kfc__featured-image {
+      background-size: cover;
+      height: 427px;
+    }
+  }
+  // featured navigation
+  .kfc__featured-nav-container {
+    height: 40%;
+  }
+  .kfc__featured-nav h2 {
+    width: 50%;
+  }
+  // Navigation area
+  .kfc__navigation-wrap {
+    left: 65px;
+  }
+  // chicken category
+  .kfc__menu-categories,
+  .kfc__menu-subcategories {
+    h3 {
+      line-height: 9;
+    }
+    background-position: left center;
+    &:hover {
+      background-position: -3em center;
+    }
+  }
+  // Menu Page
+  #burgerCategory {
+    background-position: 3em center;
+    &:hover {
+      background-position: -1em center;
+    }
+  }
+  #treatsCategory {
+    background-position: 5em center;
+    &:hover {
+      background-position: 1em center;
+    }
+  }
+  #breakfastCategory {
+    background-position: 6em center;
+    &:hover {
+      background-position: 2em center;
+    }
+  }
+  #dessertsCategory {
+    background-position: 3em center;
+    &:hover {
+      background-position: -1em center;
+    }
+  }
+}
