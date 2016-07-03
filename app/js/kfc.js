@@ -7,24 +7,59 @@ function closeNav() {
     $('.kfc__navigation-main-links').removeClass('slideOutUp');
     $('.kfc__navigation-secondary-links').removeClass('slideOutLeft');
     $('.kfc__navigation-footer-container').removeClass('slideOutDown');
-    $('.menu-toggle.expand').removeClass('expand');
+    $('body').removeClass('no-scroll');
   }, 1000);
 }
 
-function setAnimationDelay(selector) {
-  var list = $(selector);
-  if (list.length) {
-    // $.each(list, function(i, m) {
-    //   $(m).css({ 'animation-delay': i/100 * 10 + 's'});
-    // });
+function toggleStores() {
+  var storeSide = $('.kfc__stores-search');
+  if (!storeSide.is('.reveal')) {
+    $('body').addClass('no-scroll');
+    storeSide.addClass('reveal');
+  } else {
+    storeSide.addClass('fadeOut');
+    storeSide.find('.kfc__stores-search-inner').addClass('slideOutLeft');
+    setTimeout(function() {
+      storeSide.removeClass('fadeOut').find('.kfc__stores-search-inner').removeClass('slideOutLeft');
+      storeSide.removeClass('reveal');
+      $('body').removeClass('no-scroll');
+    }, 1000);
+  }
+}
+
+function toggleMenus() {
+  var menuList = $('.kfc__menu-list');
+  if (!menuList.is('.reveal')) {
+    $('body').addClass('no-scroll');
+    menuList.addClass('reveal');
+  } else {
+    menuList.addClass('fadeOut');
+    menuList.find('.kfc__menu-list-inner').addClass('slideOutLeft');
+    setTimeout(function() {
+      menuList.removeClass('fadeOut').find('.kfc__menu-list-inner').removeClass('slideOutLeft');
+      menuList.removeClass('reveal');
+      $('body').removeClass('no-scroll');
+    }, 1000);
+  }
+}
+
+function toggleLogin() {
+  var login = $('#login-screen');
+  if (!login.is('.reveal')) {
+    $('body').addClass('no-scroll');
+    login.addClass('reveal');
+  } else {
+    login.addClass('slideOutDown');
+    setTimeout(function() {
+      login.removeClass('slideOutDown');
+      login.removeClass('reveal');
+      $('body').removeClass('no-scroll');
+    }, 1000);
   }
 }
 
 $(document).ready(function() {
   $('#loading').hide();
-
-  setAnimationDelay('.kfc__menu-categories');
-  setAnimationDelay('.kfc__menu-subcategories');
 
   $('.kfc__featured-slider').slick({
     arrows: false,
@@ -35,15 +70,40 @@ $(document).ready(function() {
     autoplaySpeed: 3000
   });
 
-  $('.kfc__navigation-menu').on('click', function(e) {
+  $('.kfc__stores-link, .kfc__stores-search .close').on('click', function(e) {
+    e.preventDefault();
+    toggleStores();
+  });
+
+  $('.kfc__stores-search').on('click', function(e) {
+    e.preventDefault();
+    toggleStores();
+  }).children().click(function(e) {
+    return false;
+  });
+
+  $('.kfc__menus-link, .kfc__menu-list .close, .kfc__menu-overlay').on('click', function(e) {
+    e.preventDefault();
+    toggleMenus();
+  });
+
+  $('.kfc__navigation .kfc__navigation-link').on('click', function(e) {
     e.preventDefault();
     var navWrap = $('.kfc__navigation-wrap');
     if (!navWrap.is('.reveal')) {
+      $('body').addClass('no-scroll');
       $('.kfc__navigation-wrap').addClass('reveal');
-      $(this).find('.menu-toggle').addClass('expand');
-    } else {
-      closeNav();
     }
+  });
+
+  $('.kfc__navigation-wrap .close').on('click', function(e) {
+    e.preventDefault();
+    closeNav();
+  });
+
+  $('.login a, #login-screen .close').on('click', function(e) {
+    e.preventDefault();
+    toggleLogin();
   });
 
   $(document).pjax('[data-pjax] a, a[data-pjax]', '.kfc__main-content', {

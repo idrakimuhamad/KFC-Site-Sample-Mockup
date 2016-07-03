@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home | KFC Malaysia</title>
+  <title>Menu | KFC Malaysia</title>
   <link href="https://npmcdn.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/btn.css">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="../../css/btn.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
   <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
   <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
-  <link rel="stylesheet" href="css/kfc.css">
+  <link rel="stylesheet" href="../../css/kfc.css">
 </head>
 <body>
   <div class="kfc__wrapper">
@@ -64,8 +64,7 @@
         </div>
       </div>
     </div>
-    <div class="kfc__menu-list fixed left-0 top-0 right-0 bottom-0">
-      <div class="kfc__menu-overlay absolute left-0 top-0 right-0 bottom-0 animated fadeIn"></div>
+    <div class="kfc__menu-list fixed left-0 top-0 right-0 bottom-0 animated fadeIn">
       <div class="kfc__menu-list-inner col-10 px3 py2 animated slideInLeft">
         <h3 class="caps m0 mb4 center">Fresh from the kitchen</h3>
         <a href="#" class="close fixed">
@@ -493,46 +492,36 @@
       </div>
     </div>
     <div class="kfc__main-content">
-      <div class="kfc__index-banner-container">
-        <ul class="kfc__index-banner">
-          <li class="kfc__banner-item">
-            <div class="kfc__banner-item-inner">
-              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
-              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block">Fullfill your taste bud with our fresh fried chicken</h2>
-                <a href="/delivery" class="btn large caps">Order yours now</a>
+      <section class="kfc__menu-container">
+        <div class="kfc__menu-content">
+          <div class="kfc__single-menu-cover animated slideInDown">
+            <img src="/img/menu_chicken9.png" alt="">
+          </div>
+          <div class="kfc__menu-description-wrapper flex justify-center animated slideInUp">
+            <div class="kfc__menu-description-content sm-col md-col-6">
+              <h2 class="caps center bold m0 py4">9 Pieces Chicken</h2>
+              <div class="kfc__menu-words p2">
+                <p>9 pieces of our signature fried chicken, so good for sharing with friends and family!</p>
+                <p>KFC's irresistible flavours starts with chicken delivered fresh to our restaurants,
+                  then lovingly coated with our signature seasoning and breading resulting in chicken that is juicy,
+                  tender, and delicious to every bite! So Good!</p>
               </div>
             </div>
-          </li>
-          <li class="kfc__banner-item">
-            <div class="kfc__banner-item-inner">
-              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
-              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block">Nothing like a good ol' deal, specially for you</h2>
-                <a href="#" class="btn large caps">Check out the latest promotions</a>
-              </div>
-            </div>
-          </li>
-          <li class="kfc__banner-item">
-            <div class="kfc__banner-item-inner">
-              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
-              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block">We got numerous appetizing selection for your tummy</h2>
-                <a href="#" class="btn large caps">See what's in store</a>
-              </div>
-            </div>
-          </li>
-          <li class="kfc__banner-item">
-            <div class="kfc__banner-item-inner">
-              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
-              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block">We value our brand, as much as we valued the one in need</h2>
-                <a href="#" class="btn large caps">Experience our CSR activities</a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </div>
+        <div class="product-navigator absolute top-0 left-0 right-0 flex items-center">
+          <div class="col-6 flex justify-start">
+            <a href="/menu/chicken/15-pieces.html" class="next-product">
+              <i class="icon ion-chevron-left"></i>
+            </a>
+          </div>
+          <div class="col-6 flex justify-end">
+            <a href="/menu/chicken/5-pieces.html" class="next-product">
+              <i class="icon ion-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
     <div id="loading" class="absolute top-0 right-0 bottom-0 flex justify-center items-center animated fadeIn">
       <div class="loader"></div>
@@ -541,6 +530,6 @@
   <script src="//code.jquery.com/jquery-1.12.4.min.js" charset="utf-8"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js" charset="utf-8"></script>
   <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js" charset="utf-8"></script>
-  <script src="/js/kfc.js" charset="utf-8"></script>
+  <script src="../../js/kfc.js" charset="utf-8"></script>
 </body>
 </html>

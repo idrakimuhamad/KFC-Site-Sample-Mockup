@@ -15,77 +15,403 @@
 </head>
 <body>
   <div class="kfc__wrapper">
-    <header class="kfc__header header-main border-right xs-hide sm-hide flex-column fixed top-0 left-0">
-      <div class="kfc__logo center p2">
+    <header class="kfc__header flex flex-wrap fixed top-0 left-0 right-0 p2">
+      <div class="col-3 flex flex-wrap">
+        <div class="kfc__stores col-6 flex justify-start items-center">
+          <a href="#" class="kfc__stores-link" title="Find store near you">
+            <i class="icon ion-map"></i>
+          </a>
+        </div>
+        <div class="kfc__menus col-6 flex justify-start items-center">
+          <a href="#" class="kfc__menus-link">
+            <i class="icon ion-grid"></i>
+            <!-- <div class="menu-toggle">
+              <div class="icon">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+              </div>
+            </div> -->
+          </a>
+        </div>
+      </div>
+      <div class="kfc__logo col-6 flex justify-center items-center">
         <a href="/" class="kfc__home-link">
           <img src="/img/logo_head_only.png" alt="">
         </a>
       </div>
-      <nav class="kfc__navigation center p2">
-        <a href="#" class="kfc__navigation-menu">
-          <div class="menu-toggle">
-            <div class="icon">
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
-              <div class="square"></div>
+      <div class="kfc__navigation col-3 flex justify-end items-center">
+        <a href="/" class="kfc__navigation-link">
+          <i class="icon ion-navicon-round"></i>
+        </a>
+      </div>
+    </header>
+    <div class="kfc__stores-search fixed left-0 top-0 right-0 bottom-0 animated fadeIn">
+      <div class="kfc__stores-search-inner col-10 px3 py2 animated slideInLeft">
+        <h3 class="caps m0 mb4 center">Look for stores near you</h3>
+        <a href="#" class="close absolute">
+          <i class="icon ion-close"></i>
+        </a>
+        <div class="kfc__stores-input relative">
+          <input type="text" class="places py2 px1 border-none" placeholder="Search by your city and zip code">
+          <i class="icon ion-search fixed py2"></i>
+        </div>
+      </div>
+    </div>
+    <div class="kfc__menu-list fixed left-0 top-0 right-0 bottom-0 animated fadeIn">
+      <div class="kfc__menu-list-inner col-10 px3 py2 animated slideInLeft">
+        <h3 class="caps m0 mb4 center">Fresh from the kitchen</h3>
+        <a href="#" class="close fixed">
+          <i class="icon ion-close"></i>
+        </a>
+        <div class="kfc__menu-container relative">
+          <div class="kfc__menus m0 p0">
+            <div class="menu-item sm-col sm-col-12">
+              <h4 class="caps">Chicken</h4>
+              <ul class="menu-list clearfix m0 p0">
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_link.png" alt="">
+                  </div>
+                  <span class="item-name caps">
+                    <a href="/menu/chicken/15-pieces.html">15 Pieces Chicken</a>
+                  </span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_chicken9.png" alt="">
+                  </div>
+                  <span class="item-name caps">
+                    <a href="/menu/chicken/9-pieces.html">9 Pieces Chicken</a>
+                  </span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_chicken5.png" alt="">
+                  </div>
+                  <span class="item-name caps">
+                    <a href="/menu/chicken/5-pieces.html">5 Pieces Chicken</a>
+                  </span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_chicken3.png" alt="">
+                  </div>
+                  <span class="item-name caps">3 Pieces Chicken</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_chicken2.png" alt="">
+                  </div>
+                  <span class="item-name caps">2 Pieces Chicken</span>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-item sm-col sm-col-12">
+              <h4 class="caps">Combos</h4>
+              <ul class="menu-list clearfix m0 p0">
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_combo1.png" alt="">
+                  </div>
+                  <span class="item-name caps">1-pc Set Combo</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_combo2.png" alt="">
+                  </div>
+                  <span class="item-name caps">1 Piece Rice Plate</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_combo3.png" alt="">
+                  </div>
+                  <span class="item-name caps">2-pc Set Combo</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_combo4.png" alt="">
+                  </div>
+                  <span class="item-name caps">2 Pieces Rice Plate</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_combo5.png" alt="">
+                  </div>
+                  <span class="item-name caps">Snack Plate</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_combo6.png" alt="">
+                  </div>
+                  <span class="item-name caps">Dinner Plate</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_combo7.png" alt="">
+                  </div>
+                  <span class="item-name caps">Family Feast</span>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-item sm-col sm-col-12">
+              <h4 class="caps">Burger/Wrap</h4>
+              <ul class="menu-list clearfix m0 p0">
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_burger.png" alt="">
+                  </div>
+                  <span class="item-name caps">Colonel Burger</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_burger2.png" alt="">
+                  </div>
+                  <span class="item-name caps">Zinger Burger</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_burger3.png" alt="">
+                  </div>
+                  <span class="item-name caps">Colonel Burger Combo</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_burger4.png" alt="">
+                  </div>
+                  <span class="item-name caps">Zinger Burger Combo</span>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-item sm-col sm-col-12">
+              <h4 class="caps">Side Orders</h4>
+              <ul class="menu-list clearfix m0 p0">
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_side.png" alt="">
+                  </div>
+                  <span class="item-name caps">Whipped potato</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_side2.png" alt="">
+                  </div>
+                  <span class="item-name caps">Coleslaw</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_side3.png" alt="">
+                  </div>
+                  <span class="item-name caps">Crispier Fries</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_side4.png" alt="">
+                  </div>
+                  <span class="item-name caps">Wedges</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_side5.png" alt="">
+                  </div>
+                  <span class="item-name caps">Nuggets</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_side6.png" alt="">
+                  </div>
+                  <span class="item-name caps">Cheezy Wedges</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_side7.png" alt="">
+                  </div>
+                  <span class="item-name caps">Colonel Chicken Rice</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_side8.png" alt="">
+                  </div>
+                  <span class="item-name caps">Butterscotch Bun</span>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-item sm-col sm-col-12">
+              <h4 class="caps">Lunch & Dinner Treats</h4>
+              <ul class="menu-list clearfix m0 p0">
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_treats.png" alt="">
+                  </div>
+                  <span class="item-name caps">Set A - 1-pc Set</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_treats2.png" alt="">
+                  </div>
+                  <span class="item-name caps">Set B - 1-pc Rice Plate</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_treats3.png" alt="">
+                  </div>
+                  <span class="item-name caps">Set C - 2-pc Set</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_treats4.png" alt="">
+                  </div>
+                  <span class="item-name caps">Set D - 2-pc Rice Plate</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_treats5.png" alt="">
+                  </div>
+                  <span class="item-name caps">Set E - Snack Plate</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_treats6.png" alt="">
+                  </div>
+                  <span class="item-name caps">Set F - Dinner Plate</span>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-item sm-col sm-col-12">
+              <h4 class="caps">Breakfast</h4>
+              <ul class="menu-list clearfix m0 p0">
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_breakfast.png" alt="">
+                  </div>
+                  <span class="item-name caps">Egg Riser</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_breakfast2.png" alt="">
+                  </div>
+                  <span class="item-name caps">Zinger Riser</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_breakfast3.png" alt="">
+                  </div>
+                  <span class="item-name caps">Twister Lite</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_breakfast4.png" alt="">
+                  </div>
+                  <span class="item-name caps">Classic Rice</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_breakfast5.png" alt="">
+                  </div>
+                  <span class="item-name caps">2pc Classic Rice</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_breakfast6.png" alt="">
+                  </div>
+                  <span class="item-name caps">Zinger Porridge</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_breakfast7.png" alt="">
+                  </div>
+                  <span class="item-name caps">Family Feast</span>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-item sm-col sm-col-12">
+              <h4 class="caps">Desserts & Beverages</h4>
+              <ul class="menu-list clearfix m0 p0">
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_desserts.png" alt="">
+                  </div>
+                  <span class="item-name caps">Kit Kat Bites Ice Cream</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_desserts2.png" alt="">
+                  </div>
+                  <span class="item-name caps">Carbonated Drink</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_desserts3.png" alt="">
+                  </div>
+                  <span class="item-name caps">Iced Lemon Tea</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_desserts4.png" alt="">
+                  </div>
+                  <span class="item-name caps">Iced Milo</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_desserts5.png" alt="">
+                  </div>
+                  <span class="item-name caps">Sjora Mango-Peach / Tropicana Twister Orange</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_desserts6.png" alt="">
+                  </div>
+                  <span class="item-name caps">Milo / Teh Tarik 'Kaw' / White Coffee</span>
+                </li>
+                <li class="item sm-col md-col-4">
+                  <div class="item-image">
+                    <img src="/img/menu_desserts7.png" alt="">
+                  </div>
+                  <span class="item-name caps">Tea / Alta Rica Coffee</span>
+                </li>
+              </ul>
             </div>
           </div>
-        </a>
-      </nav>
-      <div class="kfc__cart-count center p2">
-        <a href="/cart" class="kfc__cart-link" title="Your cart">
-          <i class="icon ion-bag"></i>
-        </a>
-      </div>
-    </header>
-    <header class="kfc__header header-mobile lg-hide md-hide flex flex-wrap fixed top-0 left-0 right-0 py1 px2">
-      <nav class="kfc__navigation col-4">
-        <a href="#" class="kfc__navigation-menu">
-          <i class="icon ion-grid"></i>
-        </a>
-      </nav>
-      <div class="kfc__logo col-4 flex justify-center">
-        <a href="/" class="kfc__home-link">
-          <img src="/img/logo_head_only.png" alt="">
-        </a>
-      </div>
-      <div class="kfc__cart-count col-4 flex justify-end">
-        <a href="/cart" class="kfc__cart-link" title="Your cart">
-          <i class="icon ion-bag"></i>
-        </a>
-      </div>
-    </header>
-    <div class="kfc__navigation-wrap absolute top-0 right-0 bottom-0">
-      <div class="kfc__navigation-main-links kfc__navigation-content animated slideInDown flex flex-wrap">
-        <div class="kfc__navigation-main-content kfc__footer-content caps col-6 border-right center">
-          <a class="h2" href="/menu" data-pjax>Menu</a>
         </div>
-        <div class="kfc__navigation-main-content kfc__footer-content caps col-6 center">
+      </div>
+    </div>
+    <div class="kfc__navigation-wrap fixed top-0 right-0 bottom-0">
+      <a href="#" class="close fixed">
+        <i class="icon ion-close"></i>
+      </a>
+      <div class="kfc__navigation-main-links kfc__navigation-content animated slideInDown clearfix">
+        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col md-col-4 center">
+          <a class="h2" href="/delivery">Delivery</a>
+        </div>
+        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col md-col-4 center">
+          <a class="h2" href="/#">Menu</a>
+        </div>
+        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col md-col-4 center">
           <a class="h2" href="/#">Promotions</a>
         </div>
       </div>
-      <div class="kfc__navigation-secondary-links kfc__navigation-content animated slideInLeft border-top flex flex-wrap">
-        <div class="kfc__navigation-secondary-content kfc__footer-content center col-3 border-right caps">
+      <div class="kfc__navigation-secondary-links kfc__navigation-content animated slideInLeft border-top clearfix">
+        <div class="kfc__navigation-secondary-content kfc__footer-content center sm-col sm-col-6 md-col-3 border-right caps">
           <a href="/stores">Stores</a>
         </div>
-        <div class="kfc__navigation-secondary-content kfc__footer-content center col-3 border-right caps">
+        <div class="kfc__navigation-secondary-content kfc__footer-content center sm-col sm-col-6 md-col-3 border-right caps">
           <a href="/#">CSR</a>
         </div>
-        <div class="kfc__navigation-secondary-content kfc__footer-content center col-3 border-right caps">
+        <div class="kfc__navigation-secondary-content kfc__footer-content center sm-col sm-col-6 md-col-3 border-right caps">
           <a href="/#">News</a>
         </div>
-        <div class="kfc__navigation-secondary-content kfc__footer-content center col-3 caps">
+        <div class="kfc__navigation-secondary-content kfc__footer-content center sm-col sm-col-6 md-col-3 caps">
           <a href="/#">Catering</a>
         </div>
       </div>
-      <div class="kfc__navigation-footer-container kfc__navigation-content animated slideInUp border-top flex flex-wrap">
-        <div class="kfc__navigation-footer-content col-3 flex">
+      <div class="kfc__navigation-footer-container kfc__navigation-content animated slideInUp border-top clearfix">
+        <div class="kfc__navigation-footer-content sm-col md-col-3">
           <ul class="kfc__footer">
             <li class="px2 py1"><h5 class="caps m0 mt1 mb1">About</h5></li>
             <li class="px2 py1">
@@ -114,7 +440,7 @@
             </li>
           </ul>
         </div>
-        <div class="kfc__navigation-footer-content col-3 flex">
+        <div class="kfc__navigation-footer-content sml-col md-col-3">
           <ul class="kfc__footer">
             <li class="px2 py1"><h5 class="caps m0 mt1 mb1">Celebration</h5></li>
             <li class="px2 py1">
@@ -128,7 +454,7 @@
             </li>
           </ul>
         </div>
-        <div class="kfc__navigation-footer-content col-3 flex">
+        <div class="kfc__navigation-footer-content sml-col md-col-3">
           <ul class="kfc__footer">
             <li class="px2 py1"><h5 class="caps m0 mt1 mb1">Contact</h5></li>
             <li class="px2 py1">
@@ -139,7 +465,7 @@
             </li>
           </ul>
         </div>
-        <div class="kfc__navigation-footer-content col-3">
+        <div class="kfc__navigation-footer-content sml-col md-col-3">
           <div class="kfc__footer-social mt1 py1 flex flex-wrap">
             <div class="col-3 center p1">
               <a href="#">
@@ -169,34 +495,29 @@
       <section class="kfc__menu-container">
         <div class="kfc__menu-content">
           <div class="kfc__single-menu-cover animated slideInDown">
-            <img src="/img/menu_chicken.png" alt="">
+            <img src="/img/menu_link.png" alt="">
           </div>
           <div class="kfc__menu-description-wrapper flex justify-center animated slideInUp">
-            <div class="kfc__menu-description-content col-6">
+            <div class="kfc__menu-description-content sm-col md-col-6">
               <h2 class="caps center bold m0 py4">15 Pieces Chicken</h2>
-              <div class="order-container center py3">
-                <strong class="h3 kfc_menu-price center block mb2">RM51.10</strong>
-                <button class="btn order-now block caps">Order</button>
-              </div>
-              <div class="kfc__menu-words py2">
+              <div class="kfc__menu-words p2">
                 <p>15 pieces of our signature fried chicken, so good for sharing with friends and family!</p>
                 <p>KFC's irresistible flavours starts with chicken delivered fresh to our restaurants,
                   then lovingly coated with our signature seasoning and breading resulting in chicken that is juicy,
                   tender, and delicious to every bite! So Good!</p>
               </div>
-              <div class="kfc__gst-note border-top py2">
-                <p>
-                  <small>Prices are inclusive of 6% GST. Servings featured are for illustration purposes only.
-                    Combo and price may vary according to location. Should any discrepancy occur in published price,
-                    the pricing at restaurant point of purchase is deemed final. Promotion is valid while stocks last.
-                    Management reserves the right to change and / or remove items from menu without prior notice.</small>
-                </p>
-              </div>
             </div>
           </div>
-          <div class="kfc__single-menu-close fixed">
-            <a href="/menu/chicken" data-pjax>
-              <i class="icon ion-close"></i>
+        </div>
+        <div class="product-navigator absolute top-0 left-0 right-0 flex items-center">
+          <div class="col-6 flex justify-start">
+            <a href="#" class="previous-product">
+              <i class="icon ion-chevron-left"></i>
+            </a>
+          </div>
+          <div class="col-6 flex justify-end">
+            <a href="/menu/chicken/9-pieces.html" class="next-product">
+              <i class="icon ion-chevron-right"></i>
             </a>
           </div>
         </div>

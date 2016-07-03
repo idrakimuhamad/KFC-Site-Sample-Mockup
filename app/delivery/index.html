@@ -4,46 +4,28 @@
   <meta charset="UTF-8">
   <title>Home | KFC Malaysia</title>
   <link href="https://npmcdn.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/btn.css">
+  <link rel="stylesheet" href="../css/btn.css">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
   <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
   <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
-  <link rel="stylesheet" href="css/kfc.css">
+  <link rel="stylesheet" href="../css/kfc.css">
 </head>
 <body>
   <div class="kfc__wrapper">
-    <header class="kfc__header flex flex-wrap fixed top-0 left-0 right-0 p2">
+    <header class="kfc__header delivery-header flex flex-wrap fixed top-0 left-0 right-0 p2">
       <div class="col-3 flex flex-wrap">
         <div class="kfc__stores col-6 flex justify-start items-center">
           <a href="#" class="kfc__stores-link" title="Find store near you">
             <i class="icon ion-map"></i>
           </a>
         </div>
-        <div class="kfc__menus col-6 flex justify-start items-center">
-          <a href="#" class="kfc__menus-link">
-            <i class="icon ion-grid"></i>
-            <!-- <div class="menu-toggle">
-              <div class="icon">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-              </div>
-            </div> -->
-          </a>
-        </div>
       </div>
       <div class="kfc__logo col-6 flex justify-center items-center">
-        <a href="/" class="kfc__home-link">
-          <img src="/img/logo_head_only.png" alt="">
+        <a href="/delivery" class="kfc__home-link">
+          <img src="/img/delivery_logo.png" alt="">
         </a>
       </div>
       <div class="kfc__navigation col-3 flex justify-end items-center">
@@ -64,8 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="kfc__menu-list fixed left-0 top-0 right-0 bottom-0">
-      <div class="kfc__menu-overlay absolute left-0 top-0 right-0 bottom-0 animated fadeIn"></div>
+    <div class="kfc__menu-list fixed left-0 top-0 right-0 bottom-0 animated fadeIn">
       <div class="kfc__menu-list-inner col-10 px3 py2 animated slideInLeft">
         <h3 class="caps m0 mb4 center">Fresh from the kitchen</h3>
         <a href="#" class="close fixed">
@@ -80,25 +61,19 @@
                   <div class="item-image">
                     <img src="/img/menu_link.png" alt="">
                   </div>
-                  <span class="item-name caps">
-                    <a href="/menu/chicken/15-pieces.html">15 Pieces Chicken</a>
-                  </span>
+                  <span class="item-name caps">15 Pieces Chicken</span>
                 </li>
                 <li class="item sm-col md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_chicken9.png" alt="">
                   </div>
-                  <span class="item-name caps">
-                    <a href="/menu/chicken/9-pieces.html">9 Pieces Chicken</a>
-                  </span>
+                  <span class="item-name caps">9 Pieces Chicken</span>
                 </li>
                 <li class="item sm-col md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_chicken5.png" alt="">
                   </div>
-                  <span class="item-name caps">
-                    <a href="/menu/chicken/5-pieces.html">5 Pieces Chicken</a>
-                  </span>
+                  <span class="item-name caps">5 Pieces Chicken</span>
                 </li>
                 <li class="item sm-col md-col-4">
                   <div class="item-image">
@@ -493,45 +468,31 @@
       </div>
     </div>
     <div class="kfc__main-content">
-      <div class="kfc__index-banner-container">
-        <ul class="kfc__index-banner">
-          <li class="kfc__banner-item">
-            <div class="kfc__banner-item-inner">
-              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
-              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block">Fullfill your taste bud with our fresh fried chicken</h2>
-                <a href="/delivery" class="btn large caps">Order yours now</a>
-              </div>
-            </div>
-          </li>
-          <li class="kfc__banner-item">
-            <div class="kfc__banner-item-inner">
-              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
-              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block">Nothing like a good ol' deal, specially for you</h2>
-                <a href="#" class="btn large caps">Check out the latest promotions</a>
-              </div>
-            </div>
-          </li>
-          <li class="kfc__banner-item">
-            <div class="kfc__banner-item-inner">
-              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
-              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block">We got numerous appetizing selection for your tummy</h2>
-                <a href="#" class="btn large caps">See what's in store</a>
-              </div>
-            </div>
-          </li>
-          <li class="kfc__banner-item">
-            <div class="kfc__banner-item-inner">
-              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
-              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block">We value our brand, as much as we valued the one in need</h2>
-                <a href="#" class="btn large caps">Experience our CSR activities</a>
-              </div>
-            </div>
-          </li>
-        </ul>
+      <div class="kfc__delivery-container flex justify-center items-center">
+        <div class="clearfix kfc__delivery-inner">
+          <div class="order sm-col md-col-6 center p2">
+            <a href="/#" class="btn caps">Start Order</a>
+          </div>
+          <hr class="md-hide">
+          <div class="login sm-col md-col-6 center p2">
+            <a href="/#" class="btn caps">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="login-screen" class="login-screen-container fixed top-0 left-0 right-0 bottom-0 animated slideInUp">
+      <a href="#" class="close fixed">
+        <i class="icon ion-close"></i>
+      </a>
+      <div class="login-inner flex justify-center items-center">
+        <div class="login-form">
+          <h3 class="center caps">Login</h3>
+          <form invalidate class="login-form flex flex-column">
+            <input type="text" class="username border-none p1" placeholder="Username">
+            <input type="password" class="password border-none p1" placeholder="Password">
+            <button class="btn caps" type="submit">Login</button>
+          </form>
+        </div>
       </div>
     </div>
     <div id="loading" class="absolute top-0 right-0 bottom-0 flex justify-center items-center animated fadeIn">
@@ -541,6 +502,6 @@
   <script src="//code.jquery.com/jquery-1.12.4.min.js" charset="utf-8"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js" charset="utf-8"></script>
   <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js" charset="utf-8"></script>
-  <script src="/js/kfc.js" charset="utf-8"></script>
+  <script src="../js/kfc.js" charset="utf-8"></script>
 </body>
 </html>
