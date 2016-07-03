@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Home | KFC Malaysia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://npmcdn.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/btn.css">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -16,19 +17,19 @@
 <body>
   <div class="kfc__wrapper">
     <header class="kfc__header delivery-header flex flex-wrap fixed top-0 left-0 right-0 p2">
-      <div class="col-3 flex flex-wrap">
+      <div class="sm-col col-3 sm-col-1 flex flex-wrap">
         <div class="kfc__stores col-6 flex justify-start items-center">
           <a href="#" class="kfc__stores-link" title="Find store near you">
             <i class="icon ion-map"></i>
           </a>
         </div>
       </div>
-      <div class="kfc__logo col-6 flex justify-center items-center">
+      <div class="kfc__logo sm-col col-6 sm-col-10 flex justify-center items-center">
         <a href="/delivery" class="kfc__home-link">
           <img src="/img/delivery_logo.png" alt="">
         </a>
       </div>
-      <div class="kfc__navigation col-3 flex justify-end items-center">
+      <div class="kfc__navigation sm-col col-3 sm-col-1 flex justify-end items-center">
         <a href="/" class="kfc__navigation-link">
           <i class="icon ion-navicon-round"></i>
         </a>
@@ -42,18 +43,19 @@
         </a>
         <div class="kfc__stores-input relative">
           <input type="text" class="places py2 px1 border-none" placeholder="Search by your city and zip code">
-          <i class="icon ion-search fixed py2"></i>
+          <i class="icon ion-search absolute py2"></i>
         </div>
       </div>
     </div>
-    <div class="kfc__menu-list fixed left-0 top-0 right-0 bottom-0 animated fadeIn">
+    <div class="kfc__menu-list fixed left-0 top-0 right-0 bottom-0">
+      <div class="kfc__menu-overlay fixed left-0 top-0 right-0 bottom-0 animated fadeIn"></div>
       <div class="kfc__menu-list-inner col-10 px3 py2 animated slideInLeft">
         <h3 class="caps m0 mb4 center">Fresh from the kitchen</h3>
         <a href="#" class="close fixed">
           <i class="icon ion-close"></i>
         </a>
-        <div class="kfc__menu-container relative">
-          <div class="kfc__menus m0 p0">
+        <div class="kfc__menus-container relative">
+          <div class="kfc__menus m0 p0 clearfix">
             <div class="menu-item sm-col sm-col-12">
               <h4 class="caps">Chicken</h4>
               <ul class="menu-list clearfix m0 p0">
@@ -61,19 +63,25 @@
                   <div class="item-image">
                     <img src="/img/menu_link.png" alt="">
                   </div>
-                  <span class="item-name caps">15 Pieces Chicken</span>
+                  <span class="item-name caps">
+                    <a href="/menu/chicken/15-pieces.html">15 Pieces Chicken</a>
+                  </span>
                 </li>
                 <li class="item sm-col md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_chicken9.png" alt="">
                   </div>
-                  <span class="item-name caps">9 Pieces Chicken</span>
+                  <span class="item-name caps">
+                    <a href="/menu/chicken/9-pieces.html">9 Pieces Chicken</a>
+                  </span>
                 </li>
                 <li class="item sm-col md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_chicken5.png" alt="">
                   </div>
-                  <span class="item-name caps">5 Pieces Chicken</span>
+                  <span class="item-name caps">
+                    <a href="/menu/chicken/5-pieces.html">5 Pieces Chicken</a>
+                  </span>
                 </li>
                 <li class="item sm-col md-col-4">
                   <div class="item-image">
@@ -362,13 +370,13 @@
         <i class="icon ion-close"></i>
       </a>
       <div class="kfc__navigation-main-links kfc__navigation-content animated slideInDown clearfix">
-        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col md-col-4 center">
+        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col sm-col-12 md-col-4 center">
           <a class="h2" href="/delivery">Delivery</a>
         </div>
-        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col md-col-4 center">
+        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col sm-col-12 md-col-4 center">
           <a class="h2" href="/#">Menu</a>
         </div>
-        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col md-col-4 center">
+        <div class="kfc__navigation-main-content kfc__footer-content caps sm-col sm-col-12 md-col-4 center">
           <a class="h2" href="/#">Promotions</a>
         </div>
       </div>
@@ -387,7 +395,7 @@
         </div>
       </div>
       <div class="kfc__navigation-footer-container kfc__navigation-content animated slideInUp border-top clearfix">
-        <div class="kfc__navigation-footer-content sm-col md-col-3">
+        <div class="kfc__navigation-footer-content sm-col sm-col-6 md-col-3">
           <ul class="kfc__footer">
             <li class="px2 py1"><h5 class="caps m0 mt1 mb1">About</h5></li>
             <li class="px2 py1">
@@ -416,7 +424,7 @@
             </li>
           </ul>
         </div>
-        <div class="kfc__navigation-footer-content sml-col md-col-3">
+        <div class="kfc__navigation-footer-content sm-col sm-col-6 md-col-3">
           <ul class="kfc__footer">
             <li class="px2 py1"><h5 class="caps m0 mt1 mb1">Celebration</h5></li>
             <li class="px2 py1">
@@ -430,7 +438,7 @@
             </li>
           </ul>
         </div>
-        <div class="kfc__navigation-footer-content sml-col md-col-3">
+        <div class="kfc__navigation-footer-content sm-col sm-col-6 md-col-3">
           <ul class="kfc__footer">
             <li class="px2 py1"><h5 class="caps m0 mt1 mb1">Contact</h5></li>
             <li class="px2 py1">
@@ -441,7 +449,7 @@
             </li>
           </ul>
         </div>
-        <div class="kfc__navigation-footer-content sml-col md-col-3">
+        <div class="kfc__navigation-footer-content sm-col sm-col-6 md-col-3">
           <div class="kfc__footer-social mt1 py1 flex flex-wrap">
             <div class="col-3 center p1">
               <a href="#">

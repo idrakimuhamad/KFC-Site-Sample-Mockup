@@ -186,7 +186,7 @@ a {
     .kfc__index-banner .kfc__banner-item:nth-child(4) .kfc__banner-image {
       background-image: url("../img/feature_crs.png"); }
     .kfc__index-banner .kfc__banner-item .kfc__banner-text {
-      padding-top: 50%;
+      padding-top: 45vh;
       color: #fff;
       z-index: 7; }
 
@@ -223,6 +223,8 @@ a {
   .kfc__menu-list .kfc__menu-overlay {
     background: rgba(0, 0, 0, 0.55);
     z-index: 10; }
+  .kfc__menu-list .kfc__menus-container {
+    background: #fff; }
   .kfc__menu-list.reveal {
     display: block;
     overflow: auto; }
@@ -294,7 +296,8 @@ a {
   z-index: 12;
   display: none;
   left: 0;
-  overflow: auto; }
+  overflow: auto;
+  background: #fff; }
   .kfc__navigation-wrap .close {
     top: 1rem;
     left: 1rem;
@@ -490,11 +493,15 @@ a {
 .kfc__menu-container {
   padding-top: 4rem; }
 
-.kfc__menu-description-content {
+.kfc__menu-description-wrapper {
   background: #fff; }
-  .kfc__menu-description-content h2 {
-    background: #c41230;
-    color: #fff; }
+
+.kfc__menu-description-content h2 {
+  background: #c41230;
+  color: #fff;
+  position: relative;
+  top: -3rem;
+  margin-bottom: -3rem; }
 
 .kfc__single-menu-cover img {
   max-width: 100%;
@@ -560,45 +567,3 @@ a {
     background: #f2f2f2; }
     .kfc__store-container .results-address-list .result-address {
       border-bottom: 1px solid #b3b3b3; }
-
-@media (min-width: 52em) {
-  .kfc__main-content {
-    margin-top: 0;
-    margin-left: 65px;
-    height: 100vh; }
-  .kfc__feature-container {
-    height: 60%; }
-    .kfc__feature-container .kfc__featured-image {
-      background-size: cover;
-      height: 427px; }
-  .kfc__featured-nav-container {
-    height: 40%; }
-  .kfc__featured-nav h2 {
-    width: 50%; }
-  .kfc__navigation-wrap {
-    left: 65px; }
-  .kfc__menu-categories,
-  .kfc__menu-subcategories {
-    background-position: left center; }
-    .kfc__menu-categories h3,
-    .kfc__menu-subcategories h3 {
-      line-height: 9; }
-    .kfc__menu-categories:hover,
-    .kfc__menu-subcategories:hover {
-      background-position: -3em center; }
-  #burgerCategory {
-    background-position: 3em center; }
-    #burgerCategory:hover {
-      background-position: -1em center; }
-  #treatsCategory {
-    background-position: 5em center; }
-    #treatsCategory:hover {
-      background-position: 1em center; }
-  #breakfastCategory {
-    background-position: 6em center; }
-    #breakfastCategory:hover {
-      background-position: 2em center; }
-  #dessertsCategory {
-    background-position: 3em center; }
-    #dessertsCategory:hover {
-      background-position: -1em center; } }

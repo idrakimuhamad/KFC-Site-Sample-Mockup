@@ -271,7 +271,7 @@ a {
       background-image: url('../img/feature_crs.png');
     }
     .kfc__banner-text {
-      padding-top: 50%;
+      padding-top: 45vh;
       color: $white;
       z-index: 7;
     }
@@ -319,6 +319,9 @@ a {
   .kfc__menu-overlay {
     background: rgba(0,0,0, .55);
     z-index: 10;
+  }
+  .kfc__menus-container {
+    background: $white;
   }
   &.reveal {
     display: block;
@@ -411,6 +414,7 @@ a {
   display: none;
   left: 0;
   overflow: auto;
+  background: $white;
   .close {
     top: 1rem;
     left: 1rem;
@@ -646,11 +650,16 @@ a {
 .kfc__menu-container {
   padding-top: 4rem;
 }
-.kfc__menu-description-content {
+.kfc__menu-description-wrapper {
   background: $white;
+}
+.kfc__menu-description-content {
   h2 {
     background: $redPrimary;
     color: $white;
+    position: relative;
+    top: -3rem;
+    margin-bottom: -3rem;
   }
 }
 .kfc__single-menu-cover {
@@ -737,63 +746,6 @@ a {
 @media (min-width: 52em) {
   // main content
   .kfc__main-content {
-    margin-top: 0;
-    margin-left: 65px;
-    height: 100vh;
-  }
-  // Featured
-  .kfc__feature-container {
-    height: 60%;
-    .kfc__featured-image {
-      background-size: cover;
-      height: 427px;
-    }
-  }
-  // featured navigation
-  .kfc__featured-nav-container {
-    height: 40%;
-  }
-  .kfc__featured-nav h2 {
-    width: 50%;
-  }
-  // Navigation area
-  .kfc__navigation-wrap {
-    left: 65px;
-  }
-  // chicken category
-  .kfc__menu-categories,
-  .kfc__menu-subcategories {
-    h3 {
-      line-height: 9;
-    }
-    background-position: left center;
-    &:hover {
-      background-position: -3em center;
-    }
-  }
-  // Menu Page
-  #burgerCategory {
-    background-position: 3em center;
-    &:hover {
-      background-position: -1em center;
-    }
-  }
-  #treatsCategory {
-    background-position: 5em center;
-    &:hover {
-      background-position: 1em center;
-    }
-  }
-  #breakfastCategory {
-    background-position: 6em center;
-    &:hover {
-      background-position: 2em center;
-    }
-  }
-  #dessertsCategory {
-    background-position: 3em center;
-    &:hover {
-      background-position: -1em center;
-    }
+
   }
 }
