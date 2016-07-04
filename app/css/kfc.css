@@ -188,7 +188,13 @@ a {
     .kfc__index-banner .kfc__banner-item .kfc__banner-text {
       padding-top: 45vh;
       color: #fff;
+      background: rgba(0, 0, 0, 0.35);
       z-index: 7; }
+      .kfc__index-banner .kfc__banner-item .kfc__banner-text h2 {
+        font-size: 3rem;
+        margin: 0 auto 1rem; }
+      .kfc__index-banner .kfc__banner-item .kfc__banner-text a {
+        padding: 1rem 2rem; }
 
 .kfc__stores-search {
   z-index: 12;
