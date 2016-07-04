@@ -14,7 +14,7 @@ function closeNav() {
 function toggleStores() {
   var storeSide = $('.kfc__stores-search');
   if (!storeSide.is('.reveal')) {
-    $('body').addClass('no-scroll');
+    $('body, html').addClass('no-scroll');
     storeSide.addClass('reveal');
   } else {
     storeSide.addClass('fadeOut');
@@ -22,7 +22,7 @@ function toggleStores() {
     setTimeout(function() {
       storeSide.removeClass('fadeOut').find('.kfc__stores-search-inner').removeClass('slideOutLeft');
       storeSide.removeClass('reveal');
-      $('body').removeClass('no-scroll');
+      $('body, html').removeClass('no-scroll');
     }, 1000);
   }
 }
@@ -30,15 +30,17 @@ function toggleStores() {
 function toggleMenus() {
   var menuList = $('.kfc__menu-list');
   if (!menuList.is('.reveal')) {
-    $('body').addClass('no-scroll');
+    $('body, html').addClass('no-scroll');
     menuList.addClass('reveal');
+    // $.fn.fullpage.destroy();
   } else {
+    // $.fn.fullpage.reBuild();
     menuList.addClass('fadeOut');
     menuList.find('.kfc__menu-list-inner').addClass('slideOutLeft');
     setTimeout(function() {
       menuList.removeClass('fadeOut').find('.kfc__menu-list-inner').removeClass('slideOutLeft');
       menuList.removeClass('reveal');
-      $('body').removeClass('no-scroll');
+      $('body, html').removeClass('no-scroll');
     }, 1000);
   }
 }
@@ -46,15 +48,57 @@ function toggleMenus() {
 function toggleLogin() {
   var login = $('#login-screen');
   if (!login.is('.reveal')) {
-    $('body').addClass('no-scroll');
+    $('body, html').addClass('no-scroll');
     login.addClass('reveal');
   } else {
     login.addClass('slideOutDown');
     setTimeout(function() {
       login.removeClass('slideOutDown');
       login.removeClass('reveal');
-      $('body').removeClass('no-scroll');
+      $('body, html').removeClass('no-scroll');
     }, 1000);
+  }
+}
+
+function initFullScreen() {
+  if ($('.kfc__index-banner').length) {
+    $('.kfc__index-banner').fullpage({
+      navigation: true,
+      css3: true,
+      scrollingSpeed: 700,
+      fitToSection: true,
+      fitToSectionDelay: 1000,
+      scrollBar: false,
+      easing: 'easeInOutCubic',
+      easingcss3: 'ease',
+      keyboardScrolling: true,
+      animateAnchor: true,
+      recordHistory: true,
+      afterLoad: function(link, index) {
+        var loadedSection = $(this);
+        loadedSection.find('h2')
+                      .addClass('reveal')
+                      .addClass('fadeInDown')
+                    .end()
+                    .find('a.btn.animated')
+                      .addClass('reveal')
+                      .addClass('fadeInUp');
+      },
+      onLeave: function(index, nextIndex, direction){
+        var leavingSection = $(this);
+        if ($('.kfc__menu-list').is('.reveal') ||
+            $('.kfc__stores-search').is('.reveal') ||
+            $('.kfc__navigation-wrap').is('.reveal')) {
+          return false;
+        } else {
+          leavingSection.find('h2.reveal')
+                        .removeClass('fadeInDown, reveal')
+                      .end()
+                      .find('a.btn.reveal')
+                        .removeClass('fadeInUp, reveal');
+        }
+      }
+    });
   }
 }
 
@@ -70,37 +114,7 @@ $(document).ready(function() {
     autoplaySpeed: 3000
   });
 
-  $('.kfc__index-banner').fullpage({
-    navigation: true,
-    css3: true,
-    scrollingSpeed: 700,
-    fitToSection: true,
-    fitToSectionDelay: 1000,
-    scrollBar: false,
-    easing: 'easeInOutCubic',
-    easingcss3: 'ease',
-    keyboardScrolling: true,
-    animateAnchor: true,
-    recordHistory: true,
-    afterLoad: function(link, index) {
-      var loadedSection = $(this);
-      loadedSection.find('h2')
-                    .addClass('reveal')
-                    .addClass('fadeInDown')
-                  .end()
-                  .find('a.btn.animated')
-                    .addClass('reveal')
-                    .addClass('fadeInUp');
-    },
-    onLeave: function(index, nextIndex, direction){
-      var leavingSection = $(this);
-      leavingSection.find('h2.reveal')
-                    .removeClass('fadeInDown, reveal')
-                  .end()
-                  .find('a.btn.reveal')
-                    .removeClass('fadeInUp, reveal');
-    }
-  });
+  initFullScreen();
 
   $('.kfc__stores-link, .kfc__stores-search .close').on('click', function(e) {
     e.preventDefault();

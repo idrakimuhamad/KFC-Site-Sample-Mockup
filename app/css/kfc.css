@@ -10,8 +10,8 @@ html, body {
   padding: 0;
   height: 100%; }
 
-body.no-scroll {
-  overflow: hidden; }
+body.no-scroll, html.no-scroll {
+  overflow: hidden !important; }
 
 a {
   cursor: pointer;
@@ -207,7 +207,7 @@ a {
   background: #fff; }
 
 .kfc__stores-search {
-  z-index: 12;
+  z-index: 120;
   background: rgba(0, 0, 0, 0.55);
   display: none; }
   .kfc__stores-search.reveal {
@@ -234,7 +234,7 @@ a {
       font-size: 1em; }
 
 .kfc__menu-list {
-  z-index: 12;
+  z-index: 120;
   display: none; }
   .kfc__menu-list .kfc__menu-overlay {
     background: rgba(0, 0, 0, 0.55);

@@ -24,9 +24,9 @@ html, body {
   padding: 0;
   height: 100%;
 }
-body {
+body, html {
   &.no-scroll {
-    overflow: hidden;
+    overflow: hidden !important;
   }
 }
 a {
@@ -301,7 +301,7 @@ a {
 }
 // Stores search
 .kfc__stores-search {
-  z-index: 12;
+  z-index: 120;
   background: rgba(0,0,0, .55);
   display: none;
   &.reveal {
@@ -335,7 +335,7 @@ a {
 }
 // Menu list
 .kfc__menu-list {
-  z-index: 12;
+  z-index: 120;
   display: none;
   .kfc__menu-overlay {
     background: rgba(0,0,0, .55);
