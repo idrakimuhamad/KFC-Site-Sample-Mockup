@@ -192,9 +192,19 @@ a {
       z-index: 7; }
       .kfc__index-banner .kfc__banner-item .kfc__banner-text h2 {
         font-size: 3rem;
-        margin: 0 auto 1rem; }
+        margin: 0 auto 1rem;
+        display: none; }
+        .kfc__index-banner .kfc__banner-item .kfc__banner-text h2.reveal {
+          display: block; }
       .kfc__index-banner .kfc__banner-item .kfc__banner-text a {
-        padding: 1rem 2rem; }
+        padding: 1rem 2rem;
+        display: none; }
+        .kfc__index-banner .kfc__banner-item .kfc__banner-text a.reveal {
+          display: inline-block; }
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: #fff; }
 
 .kfc__stores-search {
   z-index: 12;

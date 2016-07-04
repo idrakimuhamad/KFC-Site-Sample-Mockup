@@ -278,13 +278,26 @@ a {
       h2 {
         font-size: 3rem;
         margin: 0 auto 1rem;
+        display: none;
+        &.reveal {
+          display: block;
+        }
       }
       a {
         padding: 1rem 2rem;
+        display: none;
+        &.reveal {
+          display: inline-block;
+        }
       }
     }
   }
   .kfc__banner-item-inner {}
+}
+// overwrite the fullpage css navigator
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: $white;
 }
 // Stores search
 .kfc__stores-search {

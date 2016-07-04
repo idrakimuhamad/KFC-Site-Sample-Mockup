@@ -70,6 +70,38 @@ $(document).ready(function() {
     autoplaySpeed: 3000
   });
 
+  $('.kfc__index-banner').fullpage({
+    navigation: true,
+    css3: true,
+    scrollingSpeed: 700,
+    fitToSection: true,
+    fitToSectionDelay: 1000,
+    scrollBar: false,
+    easing: 'easeInOutCubic',
+    easingcss3: 'ease',
+    keyboardScrolling: true,
+    animateAnchor: true,
+    recordHistory: true,
+    afterLoad: function(link, index) {
+      var loadedSection = $(this);
+      loadedSection.find('h2')
+                    .addClass('reveal')
+                    .addClass('fadeInDown')
+                  .end()
+                  .find('a.btn.animated')
+                    .addClass('reveal')
+                    .addClass('fadeInUp');
+    },
+    onLeave: function(index, nextIndex, direction){
+      var leavingSection = $(this);
+      leavingSection.find('h2.reveal')
+                    .removeClass('fadeInDown, reveal')
+                  .end()
+                  .find('a.btn.reveal')
+                    .removeClass('fadeInUp, reveal');
+    }
+  });
+
   $('.kfc__stores-link, .kfc__stores-search .close').on('click', function(e) {
     e.preventDefault();
     toggleStores();
