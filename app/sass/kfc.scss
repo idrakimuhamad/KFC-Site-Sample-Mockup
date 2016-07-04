@@ -4,6 +4,7 @@ $blackPrimary: #333;
 $redPrimary: #c41230;
 $white: #fff;
 $black: #000;
+$facebook: #3b5998;
 
 // Fonts
 $fontStack: 'Raleway', sans-serif;
@@ -98,7 +99,7 @@ a {
 .kfc__stores .kfc__stores-link,
 .kfc__navigation .kfc__navigation-link,
 .kfc__menus .kfc__menus-link {
-  font-size: 1.5em;
+  font-size: 2em;
   color: $white;
   &:hover {
     color: $redPrimary;
@@ -106,7 +107,7 @@ a {
 }
 .kfc__logo {
   img {
-    width: 2em;
+    width: 3em;
   }
 }
 // Menu icon
@@ -236,6 +237,10 @@ a {
   background: $blackPrimary;
 }
 // sliders/banner
+.kfc__index-banner-container {
+  position: relative;
+  z-index: 5;
+}
 .kfc__index-banner {
   list-style-type: none;
   padding: 0;
@@ -271,7 +276,7 @@ a {
       background-image: url('../img/feature_crs.png');
     }
     .kfc__banner-text {
-      padding-top: 45vh;
+      padding-top: 35vh;
       color: $white;
       background: rgba(0,0,0, .35);
       z-index: 7;
@@ -505,10 +510,86 @@ a {
     font-size: 2em;
   }
 }
-
+// expand effect
+.expand-effect {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  &.grow {
+    z-index: 999;
+  }
+  .inner {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    transition: all .35s ease;
+    &.inner-grow-width {
+      width: 100%;
+      background-color: $redPrimary;
+    }
+    &.inner-grow-height {
+      height: 100%;
+    }
+  }
+}
 // Delivery
 .kfc__delivery-container {
   height: 100vh;
+}
+.kfc-delivery-first,
+.kfc-delivery-second,
+.kfc-delivery-third,
+.kfc-delivery-fourth,
+.kfc-delivery-fifth {
+  display: none;
+  background-color: $white;
+  padding-top: 2rem;
+  z-index: 2;
+  &.reveal {
+    display: block;
+  }
+}
+// first step
+.kfc-delivery-first {
+  .delivery-menu {
+    list-style-type: none;
+    .item {
+      img {
+        max-width: 10em;
+      }
+      .btn {
+        display: block;
+      }
+    }
+  }
+}
+// second step
+.kfc-delivery-second {
+  .ordered-item {
+    img {
+      max-width: 10em;
+    }
+  }
+}
+// third steps
+.kfc-delivery-third {
+  input {
+    font-size: 1em;
+    border-bottom: 2px solid $blackPrimary;
+    transition: border .3s ease;
+    outline: 0;
+    &:focus {
+      border-bottom-color: $redPrimary;
+    }
+  }
+  input, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .login-with-fb {
+    background-color: $facebook;
+  }
 }
 // login
 .login-screen-container {
@@ -540,6 +621,35 @@ a {
     margin-bottom: 1rem;
   }
 }
+// fourth step
+.kfc-delivery-fourth {
+   .payment-method {
+     border: 1px solid rgba(0,0,0, .15);
+     border-radius: 3px;
+     .payment-option {
+       cursor: pointer;
+       transition: all .3s ease;
+       &:hover {
+         background: rgba(0,0,0, .15);
+       }
+     }
+     .payment-option:first-child {
+       border-right: 1px solid rgba(0,0,0, .15);
+     }
+   }
+ }
+
+ // fifth
+ .kfc-delivery-fifth {
+   .order-item {
+     img {
+       max-width: 10em;
+     }
+     .btn {
+       display: block;
+     }
+   }
+ }
 
 // Menu Page
 #chickenCategory {
@@ -765,8 +875,7 @@ a {
 }
 
 @media (min-width: 52em) {
-  // main content
-  .kfc__main-content {
-
+  .kfc__banner-text {
+    padding-top: 45vh;
   }
 }

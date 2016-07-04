@@ -152,6 +152,68 @@ $(document).ready(function() {
     toggleLogin();
   });
 
+  $('.index-expand-button').on('click', function(e) {
+    e.preventDefault();
+    var href = e.target.href;
+    $('.expand-effect').addClass('grow')
+                      .find('.inner')
+                        .addClass('inner-grow-width')
+                        .delay(500)
+                        .queue(function() {
+                          $(this).addClass('inner-grow-height').dequeue();
+                        });
+
+    setTimeout(function() {
+      location.href = href;
+    }, 1000);
+  });
+
+  $('.start-order').on('click', function(e) {
+    e.preventDefault();
+    $('.kfc-delivery-first').toggleClass('reveal');
+  });
+
+  $('.order-button').on('click', function(e) {
+    e.preventDefault();
+    $('.kfc-delivery-second').toggleClass('reveal');
+    setTimeout(function() {
+       $('.kfc-delivery-first').removeClass('reveal');
+    }, 1000);
+  });
+
+  $('.ordered-item .checkout a').on('click', function(e) {
+    e.preventDefault();
+    $('.kfc-delivery-third').toggleClass('reveal');
+    setTimeout(function() {
+       $('.kfc-delivery-second').removeClass('reveal');
+    }, 1000);
+  });
+
+  $('.delivery-login-inner .login-button').on('click', function(e) {
+    e.preventDefault();
+    $('.kfc-delivery-third').addClass('slideOutDown');
+    $('.kfc-delivery-fourth').toggleClass('reveal');
+    setTimeout(function() {
+       $('.kfc-delivery-third').removeClass('reveal');
+    }, 1000);
+  });
+
+  $('.kfc-delivery-fourth .payment-option').on('click', function(e) {
+    e.preventDefault();
+    $('.kfc-delivery-fifth').toggleClass('reveal');
+    setTimeout(function() {
+       $('.kfc-delivery-fourth').removeClass('reveal');
+    }, 1000);
+  });
+
+  $('.order-again').on('click', function(e) {
+    e.preventDefault();
+    $('.kfc-delivery-first').toggleClass('reveal');
+    setTimeout(function() {
+       $('.kfc-delivery-fifth').removeClass('reveal');
+    }, 1000);
+  });
+
   $(document).pjax('[data-pjax] a, a[data-pjax]', '.kfc__main-content', {
     fragment: '.kfc__main-content'
   });
