@@ -249,10 +249,10 @@ a {
     content: '';
     background: transparent url('../img/pattern.png') repeat top left;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 0;
   }
   .kfc__banner-item {
@@ -281,7 +281,7 @@ a {
       background: rgba(0,0,0, .35);
       z-index: 7;
       h2 {
-        font-size: 3rem;
+        font-size: 2rem;
         margin: 0 auto 1rem;
         display: none;
         &.reveal {
@@ -877,5 +877,8 @@ a {
 @media (min-width: 52em) {
   .kfc__banner-text {
     padding-top: 45vh;
+    h2 {
+      font-size: 3rem;
+    }
   }
 }

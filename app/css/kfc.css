@@ -169,10 +169,10 @@ a {
     content: '';
     background: transparent url("../img/pattern.png") repeat top left;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 0; }
   .kfc__index-banner .kfc__banner-item {
     height: 100vh;
@@ -195,7 +195,7 @@ a {
       background: rgba(0, 0, 0, 0.35);
       z-index: 7; }
       .kfc__index-banner .kfc__banner-item .kfc__banner-text h2 {
-        font-size: 3rem;
+        font-size: 2rem;
         margin: 0 auto 1rem;
         display: none; }
         .kfc__index-banner .kfc__banner-item .kfc__banner-text h2.reveal {
@@ -666,4 +666,6 @@ a {
 
 @media (min-width: 52em) {
   .kfc__banner-text {
-    padding-top: 45vh; } }
+    padding-top: 45vh; }
+    .kfc__banner-text h2 {
+      font-size: 3rem; } }
