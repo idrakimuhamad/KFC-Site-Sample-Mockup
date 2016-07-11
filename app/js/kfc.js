@@ -12,19 +12,21 @@ function closeNav() {
 }
 
 function toggleStores() {
-  var storeSide = $('.kfc__stores-search');
-  if (!storeSide.is('.reveal')) {
-    $('body, html').addClass('no-scroll');
-    storeSide.addClass('reveal');
-  } else {
-    storeSide.addClass('fadeOut');
-    storeSide.find('.kfc__stores-search-inner').addClass('slideOutLeft');
-    setTimeout(function() {
-      storeSide.removeClass('fadeOut').find('.kfc__stores-search-inner').removeClass('slideOutLeft');
-      storeSide.removeClass('reveal');
-      $('body, html').removeClass('no-scroll');
-    }, 1000);
-  }
+  // var storeSide = $('.kfc__stores-search');
+  // if (!storeSide.is('.reveal')) {
+  //   $('body, html').addClass('no-scroll');
+  //   storeSide.addClass('reveal');
+  //   $.fn.fullpage.setAllowScrolling(false);
+  // } else {
+  //   $.fn.fullpage.setAllowScrolling(true);
+  //   storeSide.addClass('fadeOut');
+  //   storeSide.find('.kfc__stores-search-inner').addClass('slideOutLeft');
+  //   setTimeout(function() {
+  //     storeSide.removeClass('fadeOut').find('.kfc__stores-search-inner').removeClass('slideOutLeft');
+  //     storeSide.removeClass('reveal');
+  //     $('body, html').removeClass('no-scroll');
+  //   }, 1000);
+  // }
 }
 
 function toggleMenus() {
@@ -32,13 +34,13 @@ function toggleMenus() {
   if (!menuList.is('.reveal')) {
     $('body, html').addClass('no-scroll');
     menuList.addClass('reveal');
-    // $.fn.fullpage.destroy();
+    $.fn.fullpage.setAllowScrolling(false);
   } else {
-    // $.fn.fullpage.reBuild();
+    $.fn.fullpage.setAllowScrolling(true);
     menuList.addClass('fadeOut');
-    menuList.find('.kfc__menu-list-inner').addClass('slideOutLeft');
+    menuList.find('.kfc__menu-list-inner').addClass('slideOutRight');
     setTimeout(function() {
-      menuList.removeClass('fadeOut').find('.kfc__menu-list-inner').removeClass('slideOutLeft');
+      menuList.removeClass('fadeOut').find('.kfc__menu-list-inner').removeClass('slideOutRight');
       menuList.removeClass('reveal');
       $('body, html').removeClass('no-scroll');
     }, 1000);
@@ -74,15 +76,40 @@ function initFullScreen() {
       keyboardScrolling: true,
       animateAnchor: true,
       recordHistory: true,
+      slidesNavigation: true,
+      slidesNavPosition: 'bottom',
+      controlArrows: false,
       afterLoad: function(link, index) {
+        var loadedSection = $(this);
+        if (index != 2) {
+          loadedSection.find('h2')
+                        .addClass('reveal')
+                        .addClass('fadeInDown')
+                      .end()
+                      .find('a.btn.animated')
+                        .addClass('reveal')
+                        .addClass('fadeInUp');
+        } else {
+          // first slider item will be in here not in the afterSlideLoad() function
+          loadedSection.find('.slide:first-child')
+                        .find('h2')
+                          .addClass('reveal')
+                          .addClass('fadeInLeft')
+                        .end()
+                        .find('a.btn.animated')
+                          .addClass('reveal')
+                          .addClass('fadeInRight');
+        }
+      },
+      afterSlideLoad : function(anchorLink, index, slideAnchor, slideIndex) {
         var loadedSection = $(this);
         loadedSection.find('h2')
                       .addClass('reveal')
-                      .addClass('fadeInDown')
+                      .addClass('fadeInLeft')
                     .end()
                     .find('a.btn.animated')
                       .addClass('reveal')
-                      .addClass('fadeInUp');
+                      .addClass('fadeInRight');
       },
       onLeave: function(index, nextIndex, direction){
         // var leavingSection = $(this);
@@ -102,17 +129,38 @@ function initFullScreen() {
   }
 }
 
+function toggleMenuCategory(elem) {
+  var alreadyOpened = $('.menu-item').find('.menu-list.reveal'),
+      menuList = $(elem).closest('.menu-item').find('.menu-list');
+
+  // close anything else
+  if (alreadyOpened.length) {
+    alreadyOpened.addClass('fadeOutDown');
+
+    setTimeout(function() {
+        $('.menu-item')
+        .find('.menu-list.reveal')
+            .removeClass('fadeOutDown')
+            .removeClass('reveal')
+        .end()
+        .find('h4.expand')
+          .removeClass('expand');
+
+        if (!menuList.is('.reveal')) {
+          $(elem).closest('h4').addClass('expand');
+          menuList.addClass('reveal');
+        }
+    }, 1000);
+  } else {
+    if (!menuList.is('.reveal')) {
+      $(elem).closest('h4').addClass('expand');
+      menuList.addClass('reveal');
+    }
+  }
+}
+
 $(document).ready(function() {
   $('#loading').hide();
-
-  $('.kfc__featured-slider').slick({
-    arrows: false,
-    dots: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000
-  });
 
   initFullScreen();
 
@@ -166,6 +214,11 @@ $(document).ready(function() {
     setTimeout(function() {
       location.href = href;
     }, 1000);
+  });
+
+  $('.menu-item h4 a').on('click', function(e) {
+    e.preventDefault();
+    toggleMenuCategory(e.currentTarget);
   });
 
   $('.start-order').on('click', function(e) {

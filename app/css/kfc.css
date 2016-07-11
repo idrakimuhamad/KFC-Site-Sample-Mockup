@@ -165,26 +165,34 @@ a {
   list-style-type: none;
   padding: 0;
   margin: 0; }
-  .kfc__index-banner:after {
-    content: '';
-    background: transparent url("../img/pattern.png") repeat top left;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0; }
   .kfc__index-banner .kfc__banner-item {
     height: 100vh;
     position: relative; }
     .kfc__index-banner .kfc__banner-item .kfc__banner-image {
       background-size: cover;
       background-position: center;
-      height: 100vh; }
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 100vw; }
+      .kfc__index-banner .kfc__banner-item .kfc__banner-image:after {
+        content: '';
+        background: transparent url("../img/pattern.png") repeat top left;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0; }
     .kfc__index-banner .kfc__banner-item:nth-child(1) .kfc__banner-image {
       background-image: url("../img/banner1.jpg"); }
-    .kfc__index-banner .kfc__banner-item:nth-child(2) .kfc__banner-image {
-      background-image: url("../img/banner2.jpg"); }
+    .kfc__index-banner .kfc__banner-item:nth-child(2) .kfc__banner-item-inner {
+      position: relative; }
+      .kfc__index-banner .kfc__banner-item:nth-child(2) .kfc__banner-item-inner:nth-child(1) .kfc__banner-image {
+        background-image: url("../img/banner2.jpg"); }
+      .kfc__index-banner .kfc__banner-item:nth-child(2) .kfc__banner-item-inner:nth-child(2) .kfc__banner-image {
+        background-image: url("../img/feature_jimat_box.png"); }
+      .kfc__index-banner .kfc__banner-item:nth-child(2) .kfc__banner-item-inner:nth-child(3) .kfc__banner-image {
+        background-image: url("../img/feature_rice_wrap.png"); }
     .kfc__index-banner .kfc__banner-item:nth-child(3) .kfc__banner-image {
       background-image: url("../img/banner3.jpg"); }
     .kfc__index-banner .kfc__banner-item:nth-child(4) .kfc__banner-image {
@@ -242,7 +250,8 @@ a {
   display: none; }
   .kfc__menu-list .kfc__menu-overlay {
     background: rgba(0, 0, 0, 0.55);
-    z-index: 10; }
+    z-index: 10;
+    width: 96vw; }
   .kfc__menu-list .kfc__menus-container {
     background: #fff; }
   .kfc__menu-list.reveal {
@@ -252,14 +261,41 @@ a {
     background-color: #fff;
     min-height: 100%;
     z-index: 11;
-    position: relative; }
+    width: 100%; }
     .kfc__menu-list .kfc__menu-list-inner .close {
       top: 1rem;
       left: 1rem; }
     .kfc__menu-list .kfc__menu-list-inner h4 {
-      text-align: center; }
+      text-align: center;
+      margin: 0; }
+      .kfc__menu-list .kfc__menu-list-inner h4 a {
+        position: relative;
+        display: block; }
+        .kfc__menu-list .kfc__menu-list-inner h4 a:hover:after {
+          width: 100%;
+          background: #c41230; }
+        .kfc__menu-list .kfc__menu-list-inner h4 a:after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 1px;
+          background: transparent;
+          margin: 0 auto;
+          transition: all .35s ease; }
+        .kfc__menu-list .kfc__menu-list-inner h4 a span {
+          background: #fff;
+          position: relative;
+          z-index: 1;
+          display: block;
+          padding: 1rem;
+          margin-left: 1px;
+          margin-right: 1px;
+          margin-bottom: 1px; }
     .kfc__menu-list .kfc__menu-list-inner .menu-list {
-      list-style-type: none; }
+      list-style-type: none;
+      display: none; }
+      .kfc__menu-list .kfc__menu-list-inner .menu-list.reveal {
+        display: block; }
     .kfc__menu-list .kfc__menu-list-inner .item-image {
       display: block;
       text-align: center; }
@@ -664,7 +700,11 @@ a {
     .kfc__store-container .results-address-list .result-address {
       border-bottom: 1px solid #b3b3b3; }
 
-@media (min-width: 52em) {
+@media (min-width: 41em) {
+  .kfc__menu-overlay {
+    width: 99vw; }
+  .kfc__menu-list-inner {
+    width: 80vw; }
   .kfc__banner-text {
     padding-top: 45vh; }
     .kfc__banner-text h2 {

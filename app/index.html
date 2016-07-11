@@ -18,27 +18,28 @@
 <body>
   <div class="kfc__wrapper">
     <header class="kfc__header flex flex-wrap fixed top-0 left-0 right-0 p2">
-      <div class="sm-col col-3 sm-col-1 flex flex-wrap">
-        <div class="kfc__stores col-6 flex justify-start items-center">
-          <a href="#" class="kfc__stores-link" title="Find store near you">
-            <i class="icon ion-map"></i>
-          </a>
-        </div>
-        <div class="kfc__menus col-6 flex justify-start items-center">
-          <a href="#" class="kfc__menus-link">
-            <i class="icon ion-grid"></i>
-          </a>
-        </div>
+      <div class="kfc__navigation sm-col col-3 sm-col-2 md-col-1 flex justify-start items-center">
+        <a href="/" class="kfc__navigation-link" title="Expand links to our site">
+          <i class="icon ion-navicon-round"></i>
+        </a>
       </div>
-      <div class="kfc__logo sm-col col-6 sm-col-10 flex justify-center items-center">
-        <a href="/" class="kfc__home-link">
+      <div class="kfc__logo sm-col col-6 sm-col-8 md-col-10 flex justify-center items-center">
+        <a href="/" class="kfc__home-link" title="Home">
           <img src="/img/logo_head_only.png" alt="">
         </a>
       </div>
-      <div class="kfc__navigation sm-col col-3 sm-col-1 flex justify-end items-center">
-        <a href="/" class="kfc__navigation-link">
-          <i class="icon ion-navicon-round"></i>
-        </a>
+      <div class="sm-col col-3 sm-col-2 md-col-1 flex flex-wrap">
+        <div class="kfc__menus col-6 flex justify-end items-center">
+          <a href="#" class="kfc__menus-link" title="Our menus">
+            <i class="icon ion-fork"></i>
+            <i class="icon ion-knife"></i>
+          </a>
+        </div>
+        <div class="kfc__stores col-6 flex justify-end items-center">
+          <a href="/stores" class="kfc__stores-link" title="Find store near you">
+            <i class="icon ion-map"></i>
+          </a>
+        </div>
       </div>
     </header>
     <div class="kfc__stores-search fixed left-0 top-0 right-0 bottom-0 animated fadeIn">
@@ -54,18 +55,20 @@
       </div>
     </div>
     <div class="kfc__menu-list fixed left-0 top-0 right-0 bottom-0">
-      <div class="kfc__menu-overlay fixed left-0 top-0 right-0 bottom-0 animated fadeIn"></div>
-      <div class="kfc__menu-list-inner col-10 px3 py2 animated slideInLeft">
+      <div class="kfc__menu-overlay fixed left-0 top-0 bottom-0 animated fadeIn"></div>
+      <div class="kfc__menu-list-inner absolute top-0 right-0 px3 py2 animated slideInRight">
         <h3 class="caps m0 mb4 center">Fresh from the kitchen</h3>
         <a href="#" class="close fixed">
           <i class="icon ion-close"></i>
         </a>
         <div class="kfc__menus-container relative">
           <div class="kfc__menus m0 p0 clearfix">
-            <div class="menu-item sm-col sm-col-12">
-              <h4 class="caps">Chicken</h4>
-              <ul class="menu-list clearfix m0 p0">
-                <li class="item sm-col md-col-4">
+            <div class="menu-item mb2 sm-col sm-col-12">
+              <h4 class="caps">
+                <a href="#"><span class="px1">Chicken</span></a>
+              </h4>
+              <ul class="menu-list animated fadeInUp clearfix m0 p0">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_link.png" alt="">
                   </div>
@@ -73,7 +76,7 @@
                     <a href="/menu/chicken/15-pieces.html">15 Pieces Chicken</a>
                   </span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_chicken9.png" alt="">
                   </div>
@@ -81,7 +84,7 @@
                     <a href="/menu/chicken/9-pieces.html">9 Pieces Chicken</a>
                   </span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_chicken5.png" alt="">
                   </div>
@@ -89,13 +92,13 @@
                     <a href="/menu/chicken/5-pieces.html">5 Pieces Chicken</a>
                   </span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_chicken3.png" alt="">
                   </div>
                   <span class="item-name caps">3 Pieces Chicken</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_chicken2.png" alt="">
                   </div>
@@ -103,46 +106,48 @@
                 </li>
               </ul>
             </div>
-            <div class="menu-item sm-col sm-col-12">
-              <h4 class="caps">Combos</h4>
-              <ul class="menu-list clearfix m0 p0">
-                <li class="item sm-col md-col-4">
+            <div class="menu-item mb2 sm-col sm-col-12">
+              <h4 class="caps">
+                <a href="#"><span class="px1">Combos</span></a>
+              </h4>
+              <ul class="menu-list animated fadeInUp clearfix m0 p0">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_combo1.png" alt="">
                   </div>
                   <span class="item-name caps">1-pc Set Combo</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_combo2.png" alt="">
                   </div>
                   <span class="item-name caps">1 Piece Rice Plate</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_combo3.png" alt="">
                   </div>
                   <span class="item-name caps">2-pc Set Combo</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_combo4.png" alt="">
                   </div>
                   <span class="item-name caps">2 Pieces Rice Plate</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_combo5.png" alt="">
                   </div>
                   <span class="item-name caps">Snack Plate</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_combo6.png" alt="">
                   </div>
                   <span class="item-name caps">Dinner Plate</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_combo7.png" alt="">
                   </div>
@@ -150,28 +155,30 @@
                 </li>
               </ul>
             </div>
-            <div class="menu-item sm-col sm-col-12">
-              <h4 class="caps">Burger/Wrap</h4>
-              <ul class="menu-list clearfix m0 p0">
-                <li class="item sm-col md-col-4">
+            <div class="menu-item mb2 sm-col sm-col-12">
+              <h4 class="caps">
+                <a href="#"><span class="px1">burger/wrap</span></a>
+              </h4>
+              <ul class="menu-list animated fadeInUp clearfix m0 p0">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_burger.png" alt="">
                   </div>
                   <span class="item-name caps">Colonel Burger</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_burger2.png" alt="">
                   </div>
                   <span class="item-name caps">Zinger Burger</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_burger3.png" alt="">
                   </div>
                   <span class="item-name caps">Colonel Burger Combo</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_burger4.png" alt="">
                   </div>
@@ -179,52 +186,54 @@
                 </li>
               </ul>
             </div>
-            <div class="menu-item sm-col sm-col-12">
-              <h4 class="caps">Side Orders</h4>
-              <ul class="menu-list clearfix m0 p0">
-                <li class="item sm-col md-col-4">
+            <div class="menu-item mb2 sm-col sm-col-12">
+              <h4 class="caps">
+                <a href="#"><span class="px1">side orders</span></a>
+              </h4>
+              <ul class="menu-list animated fadeInUp clearfix m0 p0">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_side.png" alt="">
                   </div>
                   <span class="item-name caps">Whipped potato</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_side2.png" alt="">
                   </div>
                   <span class="item-name caps">Coleslaw</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_side3.png" alt="">
                   </div>
                   <span class="item-name caps">Crispier Fries</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_side4.png" alt="">
                   </div>
                   <span class="item-name caps">Wedges</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_side5.png" alt="">
                   </div>
                   <span class="item-name caps">Nuggets</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_side6.png" alt="">
                   </div>
                   <span class="item-name caps">Cheezy Wedges</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_side7.png" alt="">
                   </div>
                   <span class="item-name caps">Colonel Chicken Rice</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_side8.png" alt="">
                   </div>
@@ -232,40 +241,42 @@
                 </li>
               </ul>
             </div>
-            <div class="menu-item sm-col sm-col-12">
-              <h4 class="caps">Lunch & Dinner Treats</h4>
-              <ul class="menu-list clearfix m0 p0">
-                <li class="item sm-col md-col-4">
+            <div class="menu-item mb2 sm-col sm-col-12">
+              <h4 class="caps">
+                <a href="#"><span class="px1">lunch & dinner treats</span></a>
+              </h4>
+              <ul class="menu-list animated fadeInUp clearfix m0 p0">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_treats.png" alt="">
                   </div>
                   <span class="item-name caps">Set A - 1-pc Set</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_treats2.png" alt="">
                   </div>
                   <span class="item-name caps">Set B - 1-pc Rice Plate</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_treats3.png" alt="">
                   </div>
                   <span class="item-name caps">Set C - 2-pc Set</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_treats4.png" alt="">
                   </div>
                   <span class="item-name caps">Set D - 2-pc Rice Plate</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_treats5.png" alt="">
                   </div>
                   <span class="item-name caps">Set E - Snack Plate</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_treats6.png" alt="">
                   </div>
@@ -273,46 +284,48 @@
                 </li>
               </ul>
             </div>
-            <div class="menu-item sm-col sm-col-12">
-              <h4 class="caps">Breakfast</h4>
-              <ul class="menu-list clearfix m0 p0">
-                <li class="item sm-col md-col-4">
+            <div class="menu-item mb2 sm-col sm-col-12">
+              <h4 class="caps">
+                <a href="#"><span class="px1">breakfast</span></a>
+              </h4>
+              <ul class="menu-list animated fadeInUp clearfix m0 p0">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_breakfast.png" alt="">
                   </div>
                   <span class="item-name caps">Egg Riser</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_breakfast2.png" alt="">
                   </div>
                   <span class="item-name caps">Zinger Riser</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_breakfast3.png" alt="">
                   </div>
                   <span class="item-name caps">Twister Lite</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_breakfast4.png" alt="">
                   </div>
                   <span class="item-name caps">Classic Rice</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_breakfast5.png" alt="">
                   </div>
                   <span class="item-name caps">2pc Classic Rice</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_breakfast6.png" alt="">
                   </div>
                   <span class="item-name caps">Zinger Porridge</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_breakfast7.png" alt="">
                   </div>
@@ -320,46 +333,48 @@
                 </li>
               </ul>
             </div>
-            <div class="menu-item sm-col sm-col-12">
-              <h4 class="caps">Desserts & Beverages</h4>
-              <ul class="menu-list clearfix m0 p0">
-                <li class="item sm-col md-col-4">
+            <div class="menu-item mb2 sm-col sm-col-12">
+              <h4 class="caps">
+                <a href="#"><span class="px1">Desserts & Beverages</span></a>
+              </h4>
+              <ul class="menu-list animated fadeInUp clearfix m0 p0">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_desserts.png" alt="">
                   </div>
                   <span class="item-name caps">Kit Kat Bites Ice Cream</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_desserts2.png" alt="">
                   </div>
                   <span class="item-name caps">Carbonated Drink</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_desserts3.png" alt="">
                   </div>
                   <span class="item-name caps">Iced Lemon Tea</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_desserts4.png" alt="">
                   </div>
                   <span class="item-name caps">Iced Milo</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_desserts5.png" alt="">
                   </div>
                   <span class="item-name caps">Sjora Mango-Peach / Tropicana Twister Orange</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_desserts6.png" alt="">
                   </div>
                   <span class="item-name caps">Milo / Teh Tarik 'Kaw' / White Coffee</span>
                 </li>
-                <li class="item sm-col md-col-4">
+                <li class="item sm-col sm-col-6 md-col-4">
                   <div class="item-image">
                     <img src="/img/menu_desserts7.png" alt="">
                   </div>
@@ -371,7 +386,7 @@
         </div>
       </div>
     </div>
-    <div class="kfc__navigation-wrap fixed top-0 right-0 bottom-0">
+    <div class="kfc__navigation-wrap fixed top-0 right-0 bottom-0 animated fadeIn">
       <a href="#" class="close fixed">
         <i class="icon ion-close"></i>
       </a>
@@ -493,12 +508,26 @@
               </div>
             </div>
           </li>
-          <li class="kfc__banner-item section">
-            <div class="kfc__banner-item-inner">
+          <li class="kfc__banner-item kfc__banner-promotions section">
+            <div class="kfc__banner-item-inner slide">
               <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
               <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
-                <h2 class="block sm-col-10 md-col-6 animated">Nothing like a good ol' deal, specially for you</h2>
-                <a href="#" class="btn large caps animated">Check out the latest promotions</a>
+                <h2 class="block sm-col-10 md-col-6 animated">KFC Kari Kari Rangup</h2>
+                <a href="#" class="btn large caps animated">Check out KFC Kari Kari Rangup</a>
+              </div>
+            </div>
+            <div class="kfc__banner-item-inner slide">
+              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
+              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
+                <h2 class="block sm-col-10 md-col-6 animated">Get More for Less</h2>
+                <a href="#" class="btn large caps animated">Explore KFC Super Jimat Box</a>
+              </div>
+            </div>
+            <div class="kfc__banner-item-inner slide">
+              <div class="kfc__banner-image absolute left-0 top-0 right-0"></div>
+              <div class="kfc__banner-text center p2 absolute left-0 top-0 right-0 bottom-0">
+                <h2 class="block sm-col-10 md-col-6 animated">Zing Up Your Life With Zinger Rice Wrap</h2>
+                <a href="#" class="btn large caps animated">See more of Zinger Rice Wrap</a>
               </div>
             </div>
           </li>

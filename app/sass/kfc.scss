@@ -245,29 +245,54 @@ a {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  &:after {
-    content: '';
-    background: transparent url('../img/pattern.png') repeat top left;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-  }
   .kfc__banner-item {
     height: 100vh;
     position: relative;
     .kfc__banner-image {
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       height: 100vh;
+      width: 100vw;
+      &:after {
+        content: '';
+        background: transparent url('../img/pattern.png') repeat top left;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+      }
     }
     &:nth-child(1) .kfc__banner-image {
       background-image: url('../img/banner1.jpg');
     }
-    &:nth-child(2) .kfc__banner-image {
-      background-image: url('../img/banner2.jpg');
+    &:nth-child(2) {
+      .kfc__banner-item-inner {
+        position: relative;
+        // .kfc__banner-image {
+        //   &:after {
+        //     content: '';
+        //     background: transparent url('../img/pattern.png') repeat top left;
+        //     position: fixed;
+        //     top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     z-index: 0;
+        //   }
+        // }
+        &:nth-child(1) .kfc__banner-image {
+          background-image: url('../img/banner2.jpg');
+        }
+        &:nth-child(2) .kfc__banner-image {
+          background-image: url('../img/feature_jimat_box.png');
+        }
+        &:nth-child(3) .kfc__banner-image {
+          background-image: url('../img/feature_rice_wrap.png');
+        }
+      }
     }
     &:nth-child(3) .kfc__banner-image {
       background-image: url('../img/banner3.jpg');
@@ -345,6 +370,7 @@ a {
   .kfc__menu-overlay {
     background: rgba(0,0,0, .55);
     z-index: 10;
+    width: 96vw;
   }
   .kfc__menus-container {
     background: $white;
@@ -357,16 +383,50 @@ a {
     background-color: $white;
     min-height: 100%;
     z-index: 11;
-    position: relative;
+    width: 100%;
     .close {
       top: 1rem;
       left: 1rem;
     }
     h4 {
       text-align: center;
+      margin: 0;
+      a {
+        position: relative;
+        display: block;
+        &:hover {
+            &:after {
+              width: 100%;
+              background: $redPrimary;
+            }
+        }
+        &:after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 1px;
+          background: transparent;
+          margin: 0 auto;
+          transition: all .35s ease;
+        }
+        span {
+          background: $white;
+          position: relative;
+          z-index: 1;
+          display: block;
+          padding: 1rem;
+          margin-left: 1px;
+          margin-right: 1px;
+          margin-bottom: 1px;
+        }
+      }
     }
     .menu-list {
       list-style-type: none;
+      display: none;
+      &.reveal {
+        display: block;
+      }
     }
     .item-image {
       display: block;
@@ -874,7 +934,13 @@ a {
   }
 }
 
-@media (min-width: 52em) {
+@media (min-width: 41em) {
+  .kfc__menu-overlay {
+    width: 99vw;
+  }
+  .kfc__menu-list-inner {
+    width: 80vw;
+  }
   .kfc__banner-text {
     padding-top: 45vh;
     h2 {
