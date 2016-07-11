@@ -63,7 +63,7 @@ function toggleLogin() {
 function initFullScreen() {
   if ($('.kfc__index-banner').length) {
     $('.kfc__index-banner').fullpage({
-      navigation: true,
+      navigation: false,
       css3: true,
       scrollingSpeed: 700,
       fitToSection: true,
@@ -85,18 +85,18 @@ function initFullScreen() {
                       .addClass('fadeInUp');
       },
       onLeave: function(index, nextIndex, direction){
-        var leavingSection = $(this);
-        if ($('.kfc__menu-list').is('.reveal') ||
-            $('.kfc__stores-search').is('.reveal') ||
-            $('.kfc__navigation-wrap').is('.reveal')) {
-          return false;
-        } else {
-          leavingSection.find('h2.reveal')
-                        .removeClass('fadeInDown, reveal')
-                      .end()
-                      .find('a.btn.reveal')
-                        .removeClass('fadeInUp, reveal');
-        }
+        // var leavingSection = $(this);
+        // if ($('.kfc__menu-list').is('.reveal') ||
+        //     $('.kfc__stores-search').is('.reveal') ||
+        //     $('.kfc__navigation-wrap').is('.reveal')) {
+        //   return false;
+        // } else {
+        //   leavingSection.find('h2.reveal')
+        //                 .removeClass('fadeInDown, reveal')
+        //               .end()
+        //               .find('a.btn.reveal')
+        //                 .removeClass('fadeInUp, reveal');
+        // }
       }
     });
   }
