@@ -11,6 +11,10 @@ function closeNav() {
   }, 1000);
 }
 
+function scrollTopBeforeSlide() {
+  $(window).scrollTop(0);
+}
+
 function toggleStores() {
   // var storeSide = $('.kfc__stores-search');
   // if (!storeSide.is('.reveal')) {
@@ -158,18 +162,6 @@ $(document).ready(function() {
 
   initFullScreen();
 
-  $('.kfc__stores-link, .kfc__stores-search .close').on('click', function(e) {
-    e.preventDefault();
-    toggleStores();
-  });
-
-  $('.kfc__stores-search').on('click', function(e) {
-    e.preventDefault();
-    toggleStores();
-  }).children().click(function(e) {
-    return false;
-  });
-
   $('.kfc__menus-link, .kfc__menu-list .close, .kfc__menu-overlay').on('click', function(e) {
     e.preventDefault();
     toggleMenus();
@@ -210,47 +202,65 @@ $(document).ready(function() {
     }, 1000);
   });
 
-  $('.menu-item h4 a').on('click', function(e) {
-    e.preventDefault();
+  $('.menu-item h4 a, delivery-menu-list .menu h4 a').on('click', function(e) {
     toggleMenuCategory(e.currentTarget);
   });
 
   $('.start-order').on('click', function(e) {
     e.preventDefault();
+    scrollTopBeforeSlide();
     $('.kfc-delivery-first').toggleClass('reveal');
     setTimeout(function() {
-      $('.delivery-location p').html('<small class="location-success">Your current location <b>Petaling Jaya, Malaysia</b> is within the delivery area</small>');
+      $('.delivery-location p').html('<span class="location-success">Your current location <b>Petaling Jaya, Malaysia</b> is within the delivery area</span>');
     }, 2000);
   });
 
   $('.order-button').on('click', function(e) {
     e.preventDefault();
-    $('.kfc-delivery-second').toggleClass('reveal');
+    scrollTopBeforeSlide();
+    $('.kfc-delivery-second').addClass('reveal');
     setTimeout(function() {
        $('.kfc-delivery-first').removeClass('reveal');
     }, 1000);
   });
 
-  $('.ordered-item .checkout a').on('click', function(e) {
+  $('.ordered-item .checkout a.continue-order').on('click', function(e) {
     e.preventDefault();
-    $('.kfc-delivery-third').toggleClass('reveal');
+    scrollTopBeforeSlide();
+    $('.kfc-delivery-second').removeClass('reveal');
+    $('.kfc-delivery-first').addClass('reveal');
+  });
+
+  $('.ordered-item .checkout a.checkout-button').on('click', function(e) {
+    e.preventDefault();
+    scrollTopBeforeSlide();
+    $('.kfc-delivery-third').addClass('reveal');
     setTimeout(function() {
        $('.kfc-delivery-second').removeClass('reveal');
     }, 1000);
   });
 
+  $('.delivery-checkout-inner .checkout a.continue-order').on('click', function(e) {
+    e.preventDefault();
+    scrollTopBeforeSlide();
+    $('.kfc-delivery-fourth').removeClass('reveal');
+    $('.kfc-delivery-first').addClass('reveal');
+  });
+
   $('.delivery-login-inner .login-button').on('click', function(e) {
     e.preventDefault();
+    scrollTopBeforeSlide();
     $('.kfc-delivery-third').addClass('slideOutDown');
-    $('.kfc-delivery-fourth').toggleClass('reveal');
+    $('.kfc-delivery-fourth').addClass('reveal');
     setTimeout(function() {
-       $('.kfc-delivery-third').removeClass('reveal');
+       $('.kfc-delivery-third').removeClass('reveal slideOutDown');
     }, 1000);
   });
 
   $('.kfc-delivery-fourth .payment-option').on('click', function(e) {
     e.preventDefault();
-    $('.kfc-delivery-fifth').toggleClass('reveal');
+    scrollTopBeforeSlide();
+    $('.kfc-delivery-fifth').addClass('reveal');
     setTimeout(function() {
        $('.kfc-delivery-fourth').removeClass('reveal');
     }, 1000);
@@ -258,7 +268,8 @@ $(document).ready(function() {
 
   $('.order-again').on('click', function(e) {
     e.preventDefault();
-    $('.kfc-delivery-first').toggleClass('reveal');
+    scrollTopBeforeSlide();
+    $('.kfc-delivery-first').addClass('reveal');
     setTimeout(function() {
        $('.kfc-delivery-fifth').removeClass('reveal');
     }, 1000);
