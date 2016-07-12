@@ -95,6 +95,11 @@ a {
   background: transparent;
   &.common-header {
     background: $redPrimary;
+    a {
+      &:hover {
+        color: $white;
+      }
+    }
   }
 }
 .kfc__stores .kfc__stores-link,
@@ -282,18 +287,6 @@ a {
     &:nth-child(2) {
       .kfc__banner-item-inner {
         position: relative;
-        // .kfc__banner-image {
-        //   &:after {
-        //     content: '';
-        //     background: transparent url('../img/pattern.png') repeat top left;
-        //     position: fixed;
-        //     top: 0;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: 0;
-        //     z-index: 0;
-        //   }
-        // }
         &:nth-child(1) .kfc__banner-image {
           background-image: url('../img/banner2.jpg');
         }
@@ -399,51 +392,8 @@ a {
       top: 1rem;
       left: 1rem;
     }
-    h4 {
-      text-align: center;
-      margin: 0;
-      &.expand {
-        a {
-          &:after {
-            width: 100%;
-            background: $redPrimary;
-          }
-        }
-      }
-      a {
-        position: relative;
-        display: block;
-        padding: 1rem;
-        &:hover {
-          &:after {
-            width: 100%;
-            background: $redPrimary;
-          }
-        }
-        &:after {
-          content: "";
-          display: block;
-          width: 1px;
-          height: 1px;
-          background: transparent;
-          margin: 0 auto;
-          transition: all .35s ease;
-          position: relative;
-          top: -10px;
-        }
-        span {
-          background: $white;
-          position: relative;
-          z-index: 1;
-        }
-      }
-    }
     .menu-list {
       list-style-type: none;
-      display: none;
-      &.reveal {
-        display: block;
-      }
       .item {
         height: 270px;
         position: relative;
@@ -499,6 +449,58 @@ a {
       text-align: center;
       display: block;
       padding: 2rem 0;
+    }
+  }
+}
+.kfc__menu-list,
+.delivery-menu-list {
+  .menu-list {
+    display: none;
+    &.reveal {
+     display: flex;
+    }
+  }
+  .delivery-menu {
+    list-style-type: none;
+    text-align: center;
+  }
+  h4 {
+    text-align: center;
+    margin: 0;
+    &.expand {
+      a {
+        &:after {
+          width: 100%;
+          background: $redPrimary;
+        }
+      }
+    }
+    a {
+      position: relative;
+      display: block;
+      padding: 1rem;
+      &:hover {
+        &:after {
+          width: 100%;
+          background: $redPrimary;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        margin: 0 auto;
+        transition: all .35s ease;
+        position: relative;
+        top: -10px;
+      }
+      span {
+        background: $white;
+        position: relative;
+        z-index: 1;
+      }
     }
   }
 }
@@ -675,24 +677,39 @@ a {
     background: $green;
     padding: 1rem;
     color: rgba(255,255,255, .9);
+    display: inline-block;
   }
   .delivery-menu {
     list-style-type: none;
     .item {
       img {
-        max-width: 10em;
+        max-width: 100%;
       }
       .btn {
         display: block;
       }
     }
   }
+  .item-description {
+    list-style-type: none;
+    line-height: 1.5;
+    font-size: .8em;
+  }
+  .order-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
 }
 // second step
 .kfc-delivery-second {
+  .delivery-cart-inner {
+    background: $white;
+  }
   .ordered-item {
     img {
-      max-width: 10em;
+      max-width: 100%;
     }
   }
 }
@@ -913,9 +930,6 @@ a {
   h2 {
     background: $redPrimary;
     color: $white;
-    position: relative;
-    top: -3rem;
-    margin-bottom: -3rem;
   }
 }
 .kfc__single-menu-cover {
@@ -935,9 +949,6 @@ a {
   .icon {
     color: $redPrimary;
   }
-}
-.order-container {
-  border-bottom: 2px dashed $redPrimary;
 }
 .kfc_menu-price {
   display: block;
@@ -959,12 +970,16 @@ a {
 }
 // Store page
 .kfc__store-container {
-  height: 100vh;
-  > div {
-    height: 100%;
+  padding-top: 86px;
+  .kfc_store-results,
+  .kfc_store-map {
+    height: calc(100vh - 86px);
   }
   .kfc_store-map {
-    background: #D9D9D9;
+    background-image: url('../img/map.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .kfc__store-area,
   .kfc__store-option,
@@ -1006,6 +1021,11 @@ a {
   }
   .kfc__menu-list-inner {
     width: 80vw;
+  }
+  .kfc__menu-description-content h2 {
+    position: relative;
+    top: -3rem;
+    margin-bottom: -3rem;
   }
   .kfc__banner-text {
     padding-top: 45vh;
