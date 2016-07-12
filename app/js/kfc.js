@@ -34,9 +34,9 @@ function toggleMenus() {
   if (!menuList.is('.reveal')) {
     $('body, html').addClass('no-scroll');
     menuList.addClass('reveal');
-    $.fn.fullpage.setAllowScrolling(false);
+    if ($.fn.fullpage) $.fn.fullpage.setAllowScrolling(false);
   } else {
-    $.fn.fullpage.setAllowScrolling(true);
+    if ($.fn.fullpage) $.fn.fullpage.setAllowScrolling(true);
     menuList.addClass('fadeOut');
     menuList.find('.kfc__menu-list-inner').addClass('slideOutRight');
     setTimeout(function() {
@@ -78,7 +78,7 @@ function initFullScreen() {
       recordHistory: true,
       slidesNavigation: true,
       slidesNavPosition: 'bottom',
-      controlArrows: false,
+      controlArrows: true,
       afterLoad: function(link, index) {
         var loadedSection = $(this);
         if (index != 2) {
@@ -133,29 +133,23 @@ function toggleMenuCategory(elem) {
   var alreadyOpened = $('.menu-item').find('.menu-list.reveal'),
       menuList = $(elem).closest('.menu-item').find('.menu-list');
 
-  // close anything else
-  if (alreadyOpened.length) {
-    alreadyOpened.addClass('fadeOutDown');
-
-    setTimeout(function() {
-        $('.menu-item')
-        .find('.menu-list.reveal')
-            .removeClass('fadeOutDown')
-            .removeClass('reveal')
-        .end()
-        .find('h4.expand')
-          .removeClass('expand');
-
-        if (!menuList.is('.reveal')) {
-          $(elem).closest('h4').addClass('expand');
-          menuList.addClass('reveal');
-        }
-    }, 1000);
-  } else {
-    if (!menuList.is('.reveal')) {
-      $(elem).closest('h4').addClass('expand');
-      menuList.addClass('reveal');
+  if (!menuList.is('.reveal')) {
+    // close anything else
+    if (alreadyOpened.length) {
+      alreadyOpened.removeClass('reveal');
+      $('.menu-item').find('h4.expand').removeClass('expand');
     }
+
+    $(elem).closest('h4').addClass('expand');
+    menuList.addClass('reveal');
+  } else {
+    menuList.addClass('fadeOutDown')
+      .delay(1000)
+      .queue(function() {
+        $(this).removeClass('fadeOutDown reveal').dequeue();
+      });
+
+    $('.menu-item').find('h4.expand').removeClass('expand');
   }
 }
 
@@ -224,6 +218,9 @@ $(document).ready(function() {
   $('.start-order').on('click', function(e) {
     e.preventDefault();
     $('.kfc-delivery-first').toggleClass('reveal');
+    setTimeout(function() {
+      $('.delivery-location p').html('<small class="location-success">Your current location <b>Petaling Jaya, Malaysia</b> is within the delivery area</small>');
+    }, 2000);
   });
 
   $('.order-button').on('click', function(e) {
