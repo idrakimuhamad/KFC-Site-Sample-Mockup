@@ -1033,10 +1033,10 @@ a {
 }
 
 @media (min-width: 41em) {
-  .kfc__menu-overlay {
+  .kfc__menu-list .kfc__menu-overlay {
     width: 99vw;
   }
-  .kfc__menu-list-inner {
+  .kfc__menu-list .kfc__menu-list-inner {
     width: 80vw;
   }
   .kfc__menu-description-content h2 {
@@ -1044,7 +1044,7 @@ a {
     top: -3rem;
     margin-bottom: -3rem;
   }
-  .kfc__banner-text {
+  .kfc__index-banner .kfc__banner-item .kfc__banner-text {
     padding-top: 45vh;
     h2 {
       font-size: 3rem;
