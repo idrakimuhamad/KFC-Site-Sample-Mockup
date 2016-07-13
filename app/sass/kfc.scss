@@ -6,6 +6,7 @@ $white: #fff;
 $black: #000;
 $green: #690;
 $facebook: #3b5998;
+$gold: #FFD172;
 
 // Fonts
 $fontStack: 'Raleway', sans-serif;
@@ -684,10 +685,25 @@ a {
     .item {
       img {
         max-width: 100%;
+        opacity: 1;
+        transition: all .35s;
+        position: relative;
+        z-index: 1;
       }
       .btn {
         display: block;
       }
+    }
+  }
+  .favorite-active {
+    opacity: 0;
+    color: $gold;
+    transition: all .35s;
+    position: relative;
+    top: 3px;
+    font-size: 1.5rem;
+    &.favorited {
+      opacity: 1;
     }
   }
   .item-description {
@@ -700,6 +716,32 @@ a {
     left: 0;
     bottom: 0;
     right: 0;
+  }
+  .favorite {
+    cursor: pointer;
+    font-size: 5rem;
+    color: $blackPrimary;
+    opacity: 0;
+    transition: opacity .35s ease;
+    z-index: 2;
+    &.active {
+      color: $gold;
+    }
+  }
+  .item {
+    transition: all .3s cubic-bezier(.17,.67,.83,.67);
+    background: $white;
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      background: rgba(0,0,0, .05);
+      z-index: 2;
+      img {
+        opacity: 0.3;
+      }
+      .favorite {
+        opacity: 1;
+      }
+    }
   }
 }
 // second step
@@ -719,6 +761,21 @@ a {
   }
   .checkout a {
     margin-bottom: 1rem;
+  }
+  .items-cart {
+    .item {
+      text-align: center;
+      border-bottom: 1px solid rgba(0,0,0, .15);
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+  .quantity-input {
+    width: 3rem;
+    text-align: center;
+    padding: 4px 6px;
+    border: 1px solid rgba(0,0,0, .15);
   }
 }
 // third steps
@@ -1043,6 +1100,11 @@ a {
     position: relative;
     top: -3rem;
     margin-bottom: -3rem;
+  }
+  .kfc-delivery-second .items-cart {
+    .item {
+      text-align: left;
+    }
   }
   .kfc__index-banner .kfc__banner-item .kfc__banner-text {
     padding-top: 45vh;

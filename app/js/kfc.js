@@ -157,6 +157,16 @@ function toggleMenuCategory(elem) {
   }
 }
 
+function toggleFavorite(elem) {
+  if (!$(elem).is('.active')) {
+    $(elem).addClass('active');
+    $(elem).closest('.item').find('.favorite-active').addClass('favorited');
+  } else {
+    $(elem).removeClass('active');
+    $(elem).closest('.item').find('.favorite-active').removeClass('favorited');
+  }
+}
+
 $(document).ready(function() {
   $('#loading').hide();
 
@@ -275,29 +285,8 @@ $(document).ready(function() {
     }, 1000);
   });
 
-  $(document).pjax('[data-pjax] a, a[data-pjax]', '.kfc__main-content', {
-    fragment: '.kfc__main-content'
-  });
-
-  $(document).on('pjax:send', function() {
-    var menuToggle = $('.menu-toggle');
-    $('#loading').show();
-    $('.kfc__main-content').hide();
-    if (menuToggle.is('.expand')) {
-      closeNav();
-    }
-  });
-
-  $(document).on('pjax:complete', function() {
-    setAnimationDelay('.kfc__menu-categories');
-    setAnimationDelay('.kfc__menu-subcategories');
-
-    setTimeout(function() {
-      $('#loading').addClass('fadeOut');
-    }, 1500);
-    setTimeout(function() {
-      $('#loading').hide();
-      $('.kfc__main-content').show();
-    }, 2000);
+  $('.kfc-delivery-first .item .favorite').on('click', function(e) {
+    e.preventDefault();
+    toggleFavorite(e.currentTarget);
   });
 });

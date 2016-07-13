@@ -511,9 +511,23 @@ a {
 .kfc-delivery-first .delivery-menu {
   list-style-type: none; }
   .kfc-delivery-first .delivery-menu .item img {
-    max-width: 100%; }
+    max-width: 100%;
+    opacity: 1;
+    transition: all .35s;
+    position: relative;
+    z-index: 1; }
   .kfc-delivery-first .delivery-menu .item .btn {
     display: block; }
+
+.kfc-delivery-first .favorite-active {
+  opacity: 0;
+  color: #FFD172;
+  transition: all .35s;
+  position: relative;
+  top: 3px;
+  font-size: 1.5rem; }
+  .kfc-delivery-first .favorite-active.favorited {
+    opacity: 1; }
 
 .kfc-delivery-first .item-description {
   list-style-type: none;
@@ -525,6 +539,28 @@ a {
   left: 0;
   bottom: 0;
   right: 0; }
+
+.kfc-delivery-first .favorite {
+  cursor: pointer;
+  font-size: 5rem;
+  color: #333;
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 2; }
+  .kfc-delivery-first .favorite.active {
+    color: #FFD172; }
+
+.kfc-delivery-first .item {
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  background: #fff; }
+  .kfc-delivery-first .item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 2; }
+    .kfc-delivery-first .item:hover img {
+      opacity: 0.3; }
+    .kfc-delivery-first .item:hover .favorite {
+      opacity: 1; }
 
 .kfc-delivery-second .delivery-cart-inner {
   background: #fff; }
@@ -539,6 +575,18 @@ a {
 
 .kfc-delivery-second .checkout a {
   margin-bottom: 1rem; }
+
+.kfc-delivery-second .items-cart .item {
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+  .kfc-delivery-second .items-cart .item:last-child {
+    border-bottom: 0; }
+
+.kfc-delivery-second .quantity-input {
+  width: 3rem;
+  text-align: center;
+  padding: 4px 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15); }
 
 .kfc-delivery-third input {
   font-size: 1em;
@@ -805,6 +853,8 @@ a {
     position: relative;
     top: -3rem;
     margin-bottom: -3rem; }
+  .kfc-delivery-second .items-cart .item {
+    text-align: left; }
   .kfc__index-banner .kfc__banner-item .kfc__banner-text {
     padding-top: 45vh; }
     .kfc__index-banner .kfc__banner-item .kfc__banner-text h2 {
