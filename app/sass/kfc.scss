@@ -707,10 +707,18 @@ a {
   .delivery-cart-inner {
     background: $white;
   }
+  .item-description {
+    list-style-type: none;
+    line-height: 1.5;
+    font-size: .8em;
+  }
   .ordered-item {
     img {
       max-width: 100%;
     }
+  }
+  .checkout a {
+    margin-bottom: 1rem;
   }
 }
 // third steps
@@ -720,12 +728,12 @@ a {
     border-bottom: 2px solid $blackPrimary;
     transition: border .3s ease;
     outline: 0;
+    display: block;
     &:focus {
       border-bottom-color: $redPrimary;
     }
   }
   input, button {
-    display: block;
     width: 100%;
     margin-bottom: 1rem;
   }
@@ -733,6 +741,10 @@ a {
 // login
 .login-with-fb {
   background-color: $facebook;
+  &:hover {
+    background-color: lighten($facebook, 10%);
+    color: $white;
+  }
 }
 .login-screen-container {
   display: none;
@@ -749,6 +761,7 @@ a {
     top: 6rem;
   }
   input {
+    display: block;
     font-size: 1em;
     border-bottom: 2px solid $blackPrimary;
     transition: border .3s ease;
@@ -758,7 +771,6 @@ a {
     }
   }
   input, button {
-    display: block;
     width: 100%;
     margin-bottom: 1rem;
   }
@@ -783,12 +795,17 @@ a {
 
  // fifth
  .kfc-delivery-fifth {
-   .order-item {
+   .item-description {
+     list-style-type: none;
+     line-height: 1.5;
+     font-size: .8em;
+   }
+   .ordered-item {
      img {
-       max-width: 10em;
+       max-width: 100%;
      }
      .btn {
-       display: block;
+       margin-bottom: 1rem;
      }
    }
  }
